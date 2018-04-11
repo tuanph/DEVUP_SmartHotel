@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Views.LoginView"
+             BackgroundColor="Red">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="TextColor">#ffffff</Color>
+            <Color x:Key="PlaceholderColor">#cccccc</Color>
+            <Style x:Key="MyTextStyle"
+                   TargetType="Entry">
+                <Setter Property="TextColor"
+                        Value="{StaticResource TextColor}" />
+                <Setter Property="PlaceholderColor"
+                        Value="{StaticResource PlaceholderColor}" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Image Source="img_header_background_1"
+               Aspect="AspectFill" />
+
+        <Grid Padding="40,0,40,30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="18" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="18" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="24" />
+            </Grid.RowDefinitions>
+
+            <Image Source="logo_splash"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <Label Grid.Row="1"
+                   Text="Username"
+                   TextColor="{StaticResource TextColor}" />
+            <Entry Grid.Row="2"
+                   Placeholder="Username"
+                   Style="{StaticResource MyTextStyle}" />
+            <Label Grid.Row="3"
+                   Text="Password"
+                   TextColor="{StaticResource TextColor}" />
+            <Entry Grid.Row="4"
+                   IsPassword="True"
+                   Style="{StaticResource MyTextStyle}"
+                   Placeholder="Password" />
+            <Label Grid.Row="5"
+                   TextColor="{StaticResource TextColor}"
+                   Text="Forgot passord?"
+                   HorizontalOptions="End" />
+
+        </Grid>
+        <Button Grid.Row="1"
+                Text="Log in"
+                HeightRequest="60"
+                Margin="30,-30,30,0"
+                VerticalOptions="Start" />
+    </Grid>
+
+</ContentPage>
