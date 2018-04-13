@@ -5,14 +5,13 @@
              BackgroundColor="Red">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="MyTextColor">#ffffff</Color>
-            <Color x:Key="MyPlaceholderColor">#cccccc</Color>
+           
             <Style x:Key="MyTextStyle"
                    TargetType="Entry">
                 <Setter Property="TextColor"
-                        Value="{StaticResource MyTextColor}" />
+                        Value="{DynamicResource MyTextColor}" />
                 <Setter Property="PlaceholderColor"
-                        Value="{StaticResource MyPlaceholderColor}" />
+                        Value="{DynamicResource MyPlaceholderColor}" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>

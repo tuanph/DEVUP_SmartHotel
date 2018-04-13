@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Views.MenuView">
+    <ContentPage.Content>
+        <Grid  Padding="0,0,0,20"
+               RowSpacing="40">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="170" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0"
+                   Source="avatar"
+                   Aspect="Fill"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <BoxView BackgroundColor="Black"
+                     Opacity="0.6" />
+            <Label Grid.Row="0"
+                   TextColor="{StaticResource MyTextColor}"
+                   Text="Hello, Tuan Pham"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,20"
+                   VerticalOptions="End" />
+
+            <ScrollView Grid.Row="1">
+                <Grid RowSpacing="30"
+                      ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Grid.Row="0"
+                           Grid.Column="0"
+                           Source="ic_bed"
+                           Aspect="AspectFill"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           Text="Book a room"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+
+                    <Image Grid.Row="1"
+                           Grid.Column="0"
+                           Source="ic_key"
+                           Aspect="AspectFill"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="My room"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+
+                    <Image Grid.Row="2"
+                           Grid.Column="0"
+                           Source="ic_beach"
+                           Aspect="AspectFill"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Label Grid.Row="2"
+                           Grid.Column="1"
+                           Text="Suggestions"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+
+                    <Image Grid.Row="3"
+                           Grid.Column="0"
+                           Source="ic_bot"
+                           Aspect="AspectFill"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Label Grid.Row="3"
+                           Grid.Column="1"
+                           Text="Concierge"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+
+                    <Image Grid.Row="4"
+                           Grid.Column="0"
+                           Source="ic_logout"
+                           Aspect="AspectFill"
+                           HorizontalOptions="End"
+                           VerticalOptions="Center" />
+                    <Label Grid.Row="4"
+                           Grid.Column="1"
+                           Text="Logout"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+                </Grid>
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

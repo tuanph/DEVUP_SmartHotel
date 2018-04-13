@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace SmartHotel.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class AboutPage : ContentPage
+	public partial class HomeView : ContentPage
 	{
-		public AboutPage ()
+		public HomeView ()
 		{
 			InitializeComponent ();
 		}

@@ -15,10 +15,16 @@ namespace SmartHotel.Views
         public LoginView()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         public void Login_Click(object sender, EventArgs e)
         {
-            DisplayAlert("Alert", "You have been alerted", "OK");
+            //Navigation.PushAsync(new MainView());
+            //Navigation.PushModalAsync(); like a pop up, not go to view
+            //PushAsync is not supported globally on Android, please use a NavigationPage
+
+
+            App.Current.MainPage =new MainView(); //way 1
         }
 
     }
