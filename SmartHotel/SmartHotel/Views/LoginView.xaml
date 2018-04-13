@@ -5,14 +5,14 @@
              BackgroundColor="Red">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="TextColor">#ffffff</Color>
-            <Color x:Key="PlaceholderColor">#cccccc</Color>
+            <Color x:Key="MyTextColor">#ffffff</Color>
+            <Color x:Key="MyPlaceholderColor">#cccccc</Color>
             <Style x:Key="MyTextStyle"
                    TargetType="Entry">
                 <Setter Property="TextColor"
-                        Value="{StaticResource TextColor}" />
+                        Value="{StaticResource MyTextColor}" />
                 <Setter Property="PlaceholderColor"
-                        Value="{StaticResource PlaceholderColor}" />
+                        Value="{StaticResource MyPlaceholderColor}" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -40,19 +40,19 @@
                    VerticalOptions="Center" />
             <Label Grid.Row="1"
                    Text="Username"
-                   TextColor="{StaticResource TextColor}" />
+                   TextColor="{StaticResource MyTextColor}" />
             <Entry Grid.Row="2"
                    Placeholder="Username"
                    Style="{StaticResource MyTextStyle}" />
             <Label Grid.Row="3"
                    Text="Password"
-                   TextColor="{StaticResource TextColor}" />
+                   TextColor="{StaticResource MyTextColor}" />
             <Entry Grid.Row="4"
                    IsPassword="True"
                    Style="{StaticResource MyTextStyle}"
                    Placeholder="Password" />
             <Label Grid.Row="5"
-                   TextColor="{StaticResource TextColor}"
+                   TextColor="{StaticResource MyTextColor}"
                    Text="Forgot passord?"
                    HorizontalOptions="End" />
 
@@ -61,7 +61,8 @@
                 Text="Log in"
                 HeightRequest="60"
                 Margin="30,-30,30,0"
-                VerticalOptions="Start" />
+                VerticalOptions="Start"
+                Clicked="Login_Click" />
     </Grid>
 
 </ContentPage>

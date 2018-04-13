@@ -13,7 +13,7 @@ namespace SmartHotel
         {
             InitializeComponent();
 
-            MainPage = new SmartHotel.Views.LoginView();
+            MainPage = new SmartHotel.Views.AstronomyMasterDetail();
         }
 
         protected override void OnStart()
