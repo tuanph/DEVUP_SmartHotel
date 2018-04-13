@@ -45,60 +45,112 @@
                            Source="ic_bed"
                            Aspect="AspectFill"
                            HorizontalOptions="End"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBookingMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+
+                    </Image>
                     <Label Grid.Row="0"
                            Grid.Column="1"
                            Text="Book a room"
                            HorizontalOptions="Start"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnBookingMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
 
                     <Image Grid.Row="1"
                            Grid.Column="0"
                            Source="ic_key"
                            Aspect="AspectFill"
                            HorizontalOptions="End"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMyRoomMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+
+                    </Image>
                     <Label Grid.Row="1"
                            Grid.Column="1"
                            Text="My room"
                            HorizontalOptions="Start"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnMyRoomMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
 
                     <Image Grid.Row="2"
                            Grid.Column="0"
                            Source="ic_beach"
                            Aspect="AspectFill"
                            HorizontalOptions="End"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSuggestionMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label Grid.Row="2"
                            Grid.Column="1"
                            Text="Suggestions"
                            HorizontalOptions="Start"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnSuggestionMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
 
                     <Image Grid.Row="3"
                            Grid.Column="0"
                            Source="ic_bot"
                            Aspect="AspectFill"
                            HorizontalOptions="End"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnConciergeMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label Grid.Row="3"
                            Grid.Column="1"
                            Text="Concierge"
                            HorizontalOptions="Start"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnConciergeMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
 
                     <Image Grid.Row="4"
                            Grid.Column="0"
                            Source="ic_logout"
                            Aspect="AspectFill"
                            HorizontalOptions="End"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLogoutMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label Grid.Row="4"
                            Grid.Column="1"
                            Text="Logout"
                            HorizontalOptions="Start"
-                           VerticalOptions="Center" />
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLogoutMenuTapped"
+                                                  NumberOfTapsRequired="1" />
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
             </ScrollView>
         </Grid>
