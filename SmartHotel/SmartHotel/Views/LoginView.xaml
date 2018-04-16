@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartHotel.Views.LoginView"
-             BackgroundColor="Red">
+             xmlns:converters="clr-namespace:SmartHotel.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
-           
+
             <Style x:Key="MyTextStyle"
                    TargetType="Entry">
                 <Setter Property="TextColor"
@@ -13,6 +13,7 @@
                 <Setter Property="PlaceholderColor"
                         Value="{DynamicResource MyPlaceholderColor}" />
             </Style>
+            <converters:PasswordStrengthToColorConverter x:Key="PasswordStrengthToColorConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -42,14 +43,20 @@
                    TextColor="{StaticResource MyTextColor}" />
             <Entry Grid.Row="2"
                    Placeholder="Username"
-                   Style="{StaticResource MyTextStyle}" />
+                   Style="{StaticResource MyTextStyle}"
+                   Text="{Binding UserName,Mode=TwoWay }" />
             <Label Grid.Row="3"
                    Text="Password"
                    TextColor="{StaticResource MyTextColor}" />
-            <Entry Grid.Row="4"
-                   IsPassword="True"
-                   Style="{StaticResource MyTextStyle}"
-                   Placeholder="Password" />
+            <StackLayout Grid.Row="4">
+                <Entry IsPassword="True"
+                       Style="{StaticResource MyTextStyle}"
+                       Placeholder="Password"
+                       Text="{Binding Password,Mode=TwoWay}" />
+                <Label Text="{Binding PasswordStrength}"
+                       TextColor="{Binding PasswordStrength,Converter={StaticResource PasswordStrengthToColorConverter}}" />
+            </StackLayout>
+
             <Label Grid.Row="5"
                    TextColor="{StaticResource MyTextColor}"
                    Text="Forgot passord?"
@@ -62,6 +69,21 @@
                 Margin="30,-30,30,0"
                 VerticalOptions="Start"
                 Clicked="Login_Click" />
+
+
+        <Grid Grid.Row="1">
+            <StackLayout VerticalOptions="Center">
+                <Label Text="Tuanph"
+                       Rotation="{Binding Path=Value, Source={x:Reference mySlider}}"
+                       HorizontalOptions="Center" />
+
+                <Slider x:Name="mySlider"
+                        Minimum="0"
+                        Maximum="360" />
+            </StackLayout>
+
+        </Grid>
+
     </Grid>
 
 </ContentPage>

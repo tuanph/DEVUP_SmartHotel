@@ -2,6 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartHotel.Views.MenuView">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="iOS"
+                Value="ic_menu" />
+        </OnPlatform>
+    </ContentPage.Icon>
     <ContentPage.Content>
         <Grid  Padding="0,0,0,20"
                RowSpacing="40">
@@ -45,7 +51,8 @@
                            Source="ic_bed"
                            Aspect="AspectFill"
                            HorizontalOptions="End"
-                           VerticalOptions="Center">
+                           VerticalOptions="Center"
+                           HeightRequest="60">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnBookingMenuTapped"
                                                   NumberOfTapsRequired="1" />
@@ -68,7 +75,8 @@
                            Source="ic_key"
                            Aspect="AspectFill"
                            HorizontalOptions="End"
-                           VerticalOptions="Center">
+                           VerticalOptions="Center"
+                           HeightRequest="60">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnMyRoomMenuTapped"
                                                   NumberOfTapsRequired="1" />
