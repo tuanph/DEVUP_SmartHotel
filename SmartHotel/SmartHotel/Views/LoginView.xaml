@@ -40,14 +40,16 @@
                    VerticalOptions="Center" />
             <Label Grid.Row="1"
                    Text="Username"
-                   TextColor="{StaticResource MyTextColor}" />
+                   TextColor="{StaticResource MyTextColor}"
+                   FontFamily="{StaticResource RobotoRegular}" />
             <Entry Grid.Row="2"
                    Placeholder="Username"
                    Style="{StaticResource MyTextStyle}"
                    Text="{Binding UserName,Mode=TwoWay }" />
             <Label Grid.Row="3"
                    Text="Password"
-                   TextColor="{StaticResource MyTextColor}" />
+                   TextColor="{StaticResource MyTextColor}"
+                   FontFamily="{StaticResource PoppinsRegular}" />
             <StackLayout Grid.Row="4">
                 <Entry IsPassword="True"
                        Style="{StaticResource MyTextStyle}"

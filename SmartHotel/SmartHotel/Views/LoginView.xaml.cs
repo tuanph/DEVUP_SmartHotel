@@ -1,4 +1,5 @@
-﻿using SmartHotel.ViewModels;
+﻿using SmartHotel.Services;
+using SmartHotel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,8 @@ namespace SmartHotel.Views
             NavigationPage.SetHasNavigationBar(this, false);
             LoginViewModel = new LoginViewModel();
             this.BindingContext = LoginViewModel;
-            //LoginViewModel.UserName = "Tuanph";
+            var emailService = DependencyService.Get<IEmailService>();
+            emailService.Send("tuancoi250689@gmail.com", "Test Email", "From Xamarin Forms");
         }
         public void Login_Click(object sender, EventArgs e)
         {

@@ -58,8 +58,50 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EmailServiceDroid.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-Black.ttf">
+      <Link>Assets\Roboto-Black.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-BlackItalic.ttf">
+      <Link>Assets\Roboto-BlackItalic.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-Bold.ttf">
+      <Link>Assets\Roboto-Bold.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-BoldItalic.ttf">
+      <Link>Assets\Roboto-BoldItalic.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-Italic.ttf">
+      <Link>Assets\Roboto-Italic.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-Light.ttf">
+      <Link>Assets\Roboto-Light.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-LightItalic.ttf">
+      <Link>Assets\Roboto-LightItalic.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-Medium.ttf">
+      <Link>Assets\Roboto-Medium.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-MediumItalic.ttf">
+      <Link>Assets\Roboto-MediumItalic.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-Regular.ttf">
+      <Link>Assets\Roboto-Regular.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-Thin.ttf">
+      <Link>Assets\Roboto-Thin.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\roboto\Roboto-ThinItalic.ttf">
+      <Link>Assets\Roboto-ThinItalic.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="Assets\Poppins-Bold.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Light.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Medium.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Regular.ttf" />
+    <AndroidAsset Include="Assets\Poppins-SemiBold.ttf" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>

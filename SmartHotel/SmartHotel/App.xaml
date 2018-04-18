@@ -8,6 +8,173 @@
         <ResourceDictionary>
             <Color x:Key="MyTextColor">#ffffff</Color>
             <Color x:Key="MyPlaceholderColor">#cccccc</Color>
+
+            <!-- COLORS -->
+            <Color x:Key="AccentColor">#BC4C1B</Color>
+            <Color x:Key="BackgroundColor">#212C37</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="BlackTextColor">#253748</Color>
+            <Color x:Key="BlueColor">#0072C6</Color>
+            <Color x:Key="GreenColor">#368F94</Color>
+            <Color x:Key="OrangeColor">#BC4C1B</Color>
+            <Color x:Key="LightOrangeColor">#D87E56</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            <Color x:Key="ValidationErrorColor">#FF204F</Color>
+            <Color x:Key="DarkGrayColor">#ADADAD</Color>
+            <Color x:Key="GrayColor">#F6F1E9</Color>
+
+            <!--Fonts-->
+            <OnPlatform x:Key="RobotoRegular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Roboto-Regular.ttf#Roboto-Regular" />
+                <On Platform="iOs"
+                    Value="Roboto-Regular" />
+            </OnPlatform>
+            <OnPlatform x:Key="PoppinsRegular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Poppins-Regular.ttf#Poppins" />
+                <On Platform="iOS"
+                    Value="Poppins-Regular" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="PoppinsLight"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Poppins-Light.ttf#Poppins" />
+                <On Platform="iOS"
+                    Value="Poppins-Light" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="PoppinsMedium"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Poppins-Medium.ttf#Poppins" />
+                <On Platform="iOS"
+                    Value="Poppins-Medium" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="PoppinsBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Poppins-Bold.ttf#Poppins" />
+                <On Platform="iOS"
+                    Value="Poppins-Bold" />
+            </OnPlatform>
+
+            <!-- Font Size-->
+            <OnPlatform x:Key="LittleSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="11" />
+                <On Platform="Android"
+                    Value="12" />
+            </OnPlatform>
+
+
+            <OnPlatform x:Key="MediumSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="14" />
+                <On Platform="Android"
+                    Value="16" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="LargeSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="16" />
+                <On Platform="Android"
+                    Value="18" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="LargerSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="18" />
+                <On Platform="Android"
+                    Value="20" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="BigSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="20" />
+                <On Platform="Android"
+                    Value="24" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="ExtraBigSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="24" />
+                <On Platform="Android"
+                    Value="32" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="HugeSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="32" />
+                <On Platform="Android"
+                    Value="48" />
+            </OnPlatform>
+
+            <!-- STYLES -->
+            <!-- STYLES -->
+            <Style x:Key="BaseLabelStyle"
+                   TargetType="{x:Type Label}">
+            </Style>
+
+            <Style TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}" />
+
+            <Style x:Key="PoppinsBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PoppinsBold}" />
+            </Style>
+
+            <Style x:Key="PoppinsLightLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PoppinsLight}" />
+            </Style>
+
+            <Style x:Key="PoppinsMediumLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PoppinsMedium}" />
+            </Style>
+
+            <Style x:Key="PoppinsRegularLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PoppinsRegular}" />
+            </Style>
+
+            <Style TargetType="{x:Type ActivityIndicator}">
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+                <Setter Property="WidthRequest">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS"
+                                Value="100" />
+                            <On Platform="UWP"
+                                Value="300" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

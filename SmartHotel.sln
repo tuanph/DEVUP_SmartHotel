@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHotel.iOS", "SmartHote
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHotel.UWP", "SmartHotel\SmartHotel.UWP\SmartHotel.UWP.csproj", "{6E934B94-D7E0-4FF1-8916-BB6DE0054F61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartHotel", "SmartHotel\SmartHotel\SmartHotel.csproj", "{9E5476A0-E4C1-4414-9B0E-9E20BCD9ADB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartHotel", "SmartHotel\SmartHotel\SmartHotel.csproj", "{9E5476A0-E4C1-4414-9B0E-9E20BCD9ADB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
