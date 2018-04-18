@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Views.DemoTakePicture"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Image x:Name="myImage"
+                   HorizontalOptions="FillAndExpand" />-->
+            <ff:CachedImage Aspect="AspectFill"
+                            x:Name="myImage"
+                            Source="http://sohanews.sohacdn.com/2013/1372130753826.jpg">
+                <ff:CachedImage.Transformations>
+                    <transformations:CircleTransformation />
+                </ff:CachedImage.Transformations>
+
+            </ff:CachedImage>
+            <Button Clicked="btnImageClick"
+                    Text="Take a Image" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

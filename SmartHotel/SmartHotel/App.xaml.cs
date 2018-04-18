@@ -13,7 +13,7 @@ namespace SmartHotel
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new SmartHotel.Views.LoginView());
+            MainPage = new NavigationPage(new SmartHotel.Views.MapView());
         }
 
         protected override void OnStart()
