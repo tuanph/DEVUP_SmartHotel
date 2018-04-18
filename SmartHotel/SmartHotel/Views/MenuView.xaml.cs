@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartHotel.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,13 @@ namespace SmartHotel.Views
         public MenuView()
         {
             InitializeComponent();
+            BindingContext = new MenuViewModel();
+        }
+        private void listViewMenuItem_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (listViewMenuItem.SelectedItem == null)
+                return;
+            listViewMenuItem.SelectedItem = null;
         }
         private void OnBookingMenuTapped(object sender, EventArgs args)
         {

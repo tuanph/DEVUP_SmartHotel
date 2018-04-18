@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Views.Templates.MenuItemTemplate">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="Center"
+                     Padding="10">
+            <Image Source="{Binding Icon}"
+                   Aspect="AspectFill"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center">
+            </Image>
+            <Label Grid.Row="4"
+                   Grid.Column="1"
+                   Text="{Binding Title}"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center">
+            </Label>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

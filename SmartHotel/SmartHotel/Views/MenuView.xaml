@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartHotel.Views.MenuView">
+             x:Class="SmartHotel.Views.MenuView"
+             xmlns:viewTemplate="clr-namespace:SmartHotel.Views.Templates">
     <ContentPage.Icon>
         <OnPlatform x:TypeArguments="FileImageSource">
             <On Platform="iOS"
@@ -30,7 +31,7 @@
                    Margin="0,0,0,20"
                    VerticalOptions="End" />
 
-            <ScrollView Grid.Row="1">
+            <!--<ScrollView Grid.Row="1">
                 <Grid RowSpacing="30"
                       ColumnSpacing="10">
                     <Grid.RowDefinitions>
@@ -160,7 +161,22 @@
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
-            </ScrollView>
+            </ScrollView>-->
+            <ListView Grid.Row="1"
+                      x:Name="listViewMenuItem"
+                      ItemsSource="{Binding Menus}"
+                      RowHeight="60"
+                      ItemSelected="listViewMenuItem_OnItemSelected"
+                      SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <viewTemplate:MenuItemTemplate />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
         </Grid>
 
     </ContentPage.Content>

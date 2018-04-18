@@ -3,7 +3,8 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   x:Class="SmartHotel.Views.MainView"
                   xmlns:local="clr-namespace:SmartHotel.Views"
-                  MasterBehavior="Popover">
+                  MasterBehavior="Popover"
+                  Padding="20,0,0,0">
 
     <MasterDetailPage.Master>
         <local:MenuView Title="Menu" />
