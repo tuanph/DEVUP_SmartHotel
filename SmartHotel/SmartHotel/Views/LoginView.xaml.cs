@@ -29,7 +29,7 @@ namespace SmartHotel.Views
             //Navigation.PushAsync(new MainView());
             //Navigation.PushModalAsync(); like a pop up, not go to view
             //PushAsync is not supported globally on Android, please use a NavigationPage
-            //App.Current.MainPage = new MainView(); //way 1
+            App.Current.MainPage = new MainView(); //way 1
         }
 
     }

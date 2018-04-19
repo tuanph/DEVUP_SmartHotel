@@ -6,9 +6,6 @@
 
         <!-- Application resource dictionary -->
         <ResourceDictionary>
-            <Color x:Key="MyTextColor">#ffffff</Color>
-            <Color x:Key="MyPlaceholderColor">#cccccc</Color>
-
             <!-- COLORS -->
             <Color x:Key="AccentColor">#BC4C1B</Color>
             <Color x:Key="BackgroundColor">#212C37</Color>
@@ -122,13 +119,13 @@
             </OnPlatform>
 
             <!-- STYLES -->
-            <!-- STYLES -->
             <Style x:Key="BaseLabelStyle"
                    TargetType="{x:Type Label}">
             </Style>
 
             <Style TargetType="{x:Type Label}"
-                   BasedOn="{StaticResource BaseLabelStyle}" />
+                   BasedOn="{StaticResource BaseLabelStyle}">
+            </Style>
 
             <Style x:Key="PoppinsBoldLabelStyle"
                    TargetType="{x:Type Label}"

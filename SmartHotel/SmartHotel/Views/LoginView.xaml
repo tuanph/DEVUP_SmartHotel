@@ -5,15 +5,27 @@
              xmlns:converters="clr-namespace:SmartHotel.Converters">
     <ContentPage.Resources>
         <ResourceDictionary>
-
-            <Style x:Key="MyTextStyle"
-                   TargetType="Entry">
-                <Setter Property="TextColor"
-                        Value="{DynamicResource MyTextColor}" />
-                <Setter Property="PlaceholderColor"
-                        Value="{DynamicResource MyPlaceholderColor}" />
-            </Style>
             <converters:PasswordStrengthToColorConverter x:Key="PasswordStrengthToColorConverter" />
+            <Style x:Key="HeaderTextStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource PoppinsRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LittleSize}" />
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android"
+                                Value="5, 0, 0, 0" />
+                            <On Platform="iOS"
+                                Value="0, 8, 0, 0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -40,19 +52,41 @@
                    VerticalOptions="Center" />
             <Label Grid.Row="1"
                    Text="Username"
-                   TextColor="{StaticResource MyTextColor}"
-                   FontFamily="{StaticResource RobotoRegular}" />
+                   Style="{StaticResource HeaderTextStyle}">
+                <Label.HorizontalOptions>
+                    <OnIdiom x:TypeArguments="LayoutOptions"
+                             Desktop="Center"
+                             Tablet="Center"
+                             Phone="FillAndExpand" />
+                </Label.HorizontalOptions>
+                <Label.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double"
+                             Desktop="350"
+                             Tablet="320" />
+                </Label.WidthRequest>
+
+            </Label>
             <Entry Grid.Row="2"
                    Placeholder="Username"
-                   Style="{StaticResource MyTextStyle}"
                    Text="{Binding UserName,Mode=TwoWay }" />
             <Label Grid.Row="3"
                    Text="Password"
-                   TextColor="{StaticResource MyTextColor}"
-                   FontFamily="{StaticResource PoppinsRegular}" />
+                   Style="{StaticResource HeaderTextStyle}">
+                <Label.HorizontalOptions>
+                    <OnIdiom x:TypeArguments="LayoutOptions"
+                             Desktop="Center"
+                             Tablet="Center"
+                             Phone="FillAndExpand" />
+                </Label.HorizontalOptions>
+                <Label.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double"
+                             Desktop="350"
+                             Tablet="320" />
+                </Label.WidthRequest>
+            </Label>
             <StackLayout Grid.Row="4">
                 <Entry IsPassword="True"
-                       Style="{StaticResource MyTextStyle}"
+                      
                        Placeholder="Password"
                        Text="{Binding Password,Mode=TwoWay}" />
                 <Label Text="{Binding PasswordStrength}"
@@ -60,7 +94,6 @@
             </StackLayout>
 
             <Label Grid.Row="5"
-                   TextColor="{StaticResource MyTextColor}"
                    Text="Forgot passord?"
                    HorizontalOptions="End" />
 
@@ -75,13 +108,7 @@
 
         <Grid Grid.Row="1">
             <StackLayout VerticalOptions="Center">
-                <Label Text="Tuanph"
-                       Rotation="{Binding Path=Value, Source={x:Reference mySlider}}"
-                       HorizontalOptions="Center" />
-
-                <Slider x:Name="mySlider"
-                        Minimum="0"
-                        Maximum="360" />
+                
             </StackLayout>
 
         </Grid>
