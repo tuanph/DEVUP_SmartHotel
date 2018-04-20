@@ -25,7 +25,6 @@
             <BoxView BackgroundColor="Black"
                      Opacity="0.6" />
             <Label Grid.Row="0"
-                   TextColor="{StaticResource MyTextColor}"
                    Text="Hello, Tuan Pham"
                    HorizontalOptions="Center"
                    Margin="0,0,0,20"

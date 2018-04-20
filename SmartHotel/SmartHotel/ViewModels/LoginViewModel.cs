@@ -1,9 +1,12 @@
-﻿using System.ComponentModel;
+﻿using SmartHotel.Mvvm.Commands;
+using SmartHotel.Services;
+using SmartHotel.ViewModels.Base;
+using System.ComponentModel;
 
 namespace SmartHotel.ViewModels
 {
     //Source
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : ViewModelBase
     {
         private string _userName = string.Empty;
         private string _passWord = string.Empty;
@@ -11,48 +14,31 @@ namespace SmartHotel.ViewModels
 
         public string UserName
         {
-            get { return _userName; }
-            set
-            {
-                if (_userName == value)
-                    return;
-                _userName = value;
-                RasePropertyChanged(nameof(UserName));
-            }
-        }
-        public string PasswordStrength
-        {
-            get => _passwordStrength;
-            set
-            {
-                if (_passwordStrength == value)
-                    return;
-                _passwordStrength = value;
-                RasePropertyChanged(nameof(PasswordStrength));
-            }
+            get => _userName;
+            set => SetProperty(ref _userName, value); // () => LoginCommand.RaiseCanExecuteChanged()
+
         }
         public string Password
         {
-            get { return _passWord; }
-            set
-            {
-                if (_passWord == value)
-                    return;
-                _passWord = value;
-                RasePropertyChanged(nameof(Password));
-                if (_passWord != null && _passWord.Length > 6)
-                    PasswordStrength = "Good";
-                else
-                    PasswordStrength = "Invald";
-
-            }
+            get => _passWord;
+            set => SetProperty(ref _passWord, value);
         }
-
-        private void RasePropertyChanged(string propertyName)
+        public LoginViewModel()
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            LoginCommand = new DelegateCommand(Login, CanLogin)
+                .ObservesProperty(() => UserName)
+                .ObservesProperty(() => Password);
         }
+        public DelegateCommand LoginCommand { get; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        private void Login()
+        {
+            NavigationService.NavigateToAsync<MainViewModel>();
+        }
+        private bool CanLogin()
+        {
+            return !string.IsNullOrEmpty(UserName)
+                && !string.IsNullOrEmpty(Password);
+        }
     }
 }

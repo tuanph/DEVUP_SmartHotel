@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SmartHotel.Services.Navigation;
+using SmartHotel.ViewModels;
+using SmartHotel.ViewModels.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +17,13 @@ namespace SmartHotel
             InitializeComponent();
 
             MainPage = new NavigationPage(new SmartHotel.Views.LoginView());
+            BuildDependencies();
         }
-
+        public static void BuildDependencies()
+        {
+            Locator.Instance.Build();
+            Locator.Instance.Reslove<INavigationService>().NavigateToAsync<LoginViewModel>();
+        }
         protected override void OnStart()
         {
             // Handle when your app starts

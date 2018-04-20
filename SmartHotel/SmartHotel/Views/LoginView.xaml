@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartHotel.Views.LoginView"
-             xmlns:converters="clr-namespace:SmartHotel.Converters">
+             xmlns:converters="clr-namespace:SmartHotel.Converters"
+             xmlns:ctrls="clr-namespace:SmartHotel.Controls">
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:PasswordStrengthToColorConverter x:Key="PasswordStrengthToColorConverter" />
@@ -66,9 +67,26 @@
                 </Label.WidthRequest>
 
             </Label>
-            <Entry Grid.Row="2"
-                   Placeholder="Username"
-                   Text="{Binding UserName,Mode=TwoWay }" />
+
+            <ctrls:ExtendedEntry x:Name="UsernameEntry"
+                                 Grid.Row="2"
+                                 Placeholder="Username"
+                                 AutomationId="username"
+                                 Text="{Binding UserName,Mode=TwoWay }"
+                                 IsValid="False">
+                <ctrls:ExtendedEntry.HorizontalOptions>
+                    <OnIdiom x:TypeArguments="LayoutOptions"
+                             Desktop="Center"
+                             Tablet="Center"
+                             Phone="FillAndExpand" />
+                </ctrls:ExtendedEntry.HorizontalOptions>
+                <ctrls:ExtendedEntry.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double"
+                             Desktop="350"
+                             Tablet="320" />
+                </ctrls:ExtendedEntry.WidthRequest>
+            </ctrls:ExtendedEntry>
+
             <Label Grid.Row="3"
                    Text="Password"
                    Style="{StaticResource HeaderTextStyle}">
@@ -84,14 +102,26 @@
                              Tablet="320" />
                 </Label.WidthRequest>
             </Label>
-            <StackLayout Grid.Row="4">
-                <Entry IsPassword="True"
-                      
-                       Placeholder="Password"
-                       Text="{Binding Password,Mode=TwoWay}" />
-                <Label Text="{Binding PasswordStrength}"
-                       TextColor="{Binding PasswordStrength,Converter={StaticResource PasswordStrengthToColorConverter}}" />
-            </StackLayout>
+
+            <ctrls:ExtendedEntry Grid.Row="4"
+                                 x:Name="PasswordEntry"
+                                 IsPassword="True"
+                                 Placeholder="Password"
+                                 AutomationId="password"
+                                 Text="{Binding Password,Mode=TwoWay}"
+                                 IsValid="True">
+                <ctrls:ExtendedEntry.HorizontalOptions>
+                    <OnIdiom x:TypeArguments="LayoutOptions"
+                             Desktop="Center"
+                             Tablet="Center"
+                             Phone="FillAndExpand" />
+                </ctrls:ExtendedEntry.HorizontalOptions>
+                <ctrls:ExtendedEntry.WidthRequest>
+                    <OnIdiom x:TypeArguments="x:Double"
+                             Desktop="350"
+                             Tablet="320" />
+                </ctrls:ExtendedEntry.WidthRequest>
+            </ctrls:ExtendedEntry>
 
             <Label Grid.Row="5"
                    Text="Forgot passord?"
@@ -103,13 +133,8 @@
                 HeightRequest="60"
                 Margin="30,-30,30,0"
                 VerticalOptions="Start"
-                Clicked="Login_Click" />
-
-
+                Command="{Binding LoginCommand}" />
         <Grid Grid.Row="1">
-            <StackLayout VerticalOptions="Center">
-                
-            </StackLayout>
 
         </Grid>
 
