@@ -129,6 +129,15 @@
     <AndroidAsset Include="Assets\Poppins-Medium.ttf" />
     <AndroidAsset Include="Assets\Poppins-Regular.ttf" />
     <AndroidAsset Include="Assets\Poppins-SemiBold.ttf" />
+    <AndroidAsset Include="..\..\CommonResources\fonts\firasans\FiraSans-Bold.ttf">
+      <Link>Assets\FiraSans-Bold.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\firasans\FiraSans-Regular.ttf">
+      <Link>Assets\FiraSans-Regular.ttf</Link>
+    </AndroidAsset>
+    <AndroidAsset Include="..\..\CommonResources\fonts\firasans\FiraSans-SemiBold.ttf">
+      <Link>Assets\FiraSans-SemiBold.ttf</Link>
+    </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>

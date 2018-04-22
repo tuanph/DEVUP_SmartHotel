@@ -2,6 +2,7 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:SmartHotel.Converters"
+             xmlns:ctrls="clr-namespace:SmartHotel.Controls"
              x:Class="SmartHotel.App">
     <Application.Resources>
 
@@ -36,6 +37,28 @@
                 <On Platform="iOS"
                     Value="Poppins-Regular" />
             </OnPlatform>
+            <OnPlatform x:Key="PoppinsSemiBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="Poppins-SemiBold.ttf#Poppins" />
+                <On Platform="iOS"
+                    Value="Poppins-SemiBold" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="FiraSansBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="FiraSans-Bold.ttf#Fira Sans" />
+                <On Platform="iOS"
+                    Value="FiraSans-Bold" />
+            </OnPlatform>
+            <OnPlatform x:Key="FiraSansSemiBold"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="FiraSans-SemiBold.ttf#Fira Sans" />
+                <On Platform="iOS"
+                    Value="FiraSans-SemiBold" />
+            </OnPlatform>
 
             <OnPlatform x:Key="PoppinsLight"
                         x:TypeArguments="x:String">
@@ -43,6 +66,14 @@
                     Value="Poppins-Light.ttf#Poppins" />
                 <On Platform="iOS"
                     Value="Poppins-Light" />
+            </OnPlatform>
+
+            <OnPlatform x:Key="FiraSansRegular"
+                        x:TypeArguments="x:String">
+                <On Platform="Android"
+                    Value="FiraSans-Regular.ttf#Fira Sans" />
+                <On Platform="iOS"
+                    Value="FiraSans-Regular" />
             </OnPlatform>
 
             <OnPlatform x:Key="PoppinsMedium"
@@ -127,13 +158,13 @@
             </OnPlatform>
 
             <!-- STYLES -->
+            <!-- STYLES -->
             <Style x:Key="BaseLabelStyle"
                    TargetType="{x:Type Label}">
             </Style>
 
             <Style TargetType="{x:Type Label}"
-                   BasedOn="{StaticResource BaseLabelStyle}">
-            </Style>
+                   BasedOn="{StaticResource BaseLabelStyle}" />
 
             <Style x:Key="PoppinsBoldLabelStyle"
                    TargetType="{x:Type Label}"
@@ -161,6 +192,93 @@
                    BasedOn="{StaticResource BaseLabelStyle}">
                 <Setter Property="FontFamily"
                         Value="{StaticResource PoppinsRegular}" />
+            </Style>
+
+            <Style x:Key="PoppinsSemiBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PoppinsSemiBold}" />
+            </Style>
+
+            <Style x:Key="FiraSansBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource FiraSansBold}" />
+            </Style>
+
+            <Style x:Key="FiraSansSemiBoldLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource FiraSansSemiBold}" />
+            </Style>
+
+            <Style x:Key="FiraSansRegularLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource BaseLabelStyle}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource FiraSansRegular}" />
+            </Style>
+
+            <Style x:Key="BaseEntryStyle"
+                   TargetType="{x:Type ctrls:ExtendedEntry}">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PoppinsRegular}" />
+                <Setter Property="BackgroundColor"
+                        Value="Transparent" />
+                <Setter Property="TextColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="PlaceholderColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="HeightRequest"
+                        Value="44" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LargeSize}" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="FontAttributes"
+                        Value="Bold" />
+                <Setter Property="Opacity"
+                        Value="0.6" />
+                <Setter Property="FocusLineColor"
+                        Value="{StaticResource LightOrangeColor}" />
+                <Setter Property="InvalidLineColor"
+                        Value="{StaticResource ValidationErrorColor}" />
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused"
+                             Value="True">
+                        <Setter Property="Opacity"
+                                Value="1" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style TargetType="{x:Type ctrls:ExtendedEntry}"
+                   BasedOn="{StaticResource BaseEntryStyle}" />
+
+            <Style x:Key="BaseButtonStyle"
+                   TargetType="{x:Type Button}">
+                <Setter Property="BorderRadius"
+                        Value="0" />
+                <Setter Property="HeightRequest"
+                        Value="73" />
+                <Setter Property="HorizontalOptions"
+                        Value="Fill" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource MidMediumSize}" />
+                <Setter Property="FontFamily"
+                        Value="{StaticResource PoppinsSemiBold}" />
+            </Style>
+
+            <Style TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource BaseButtonStyle}" />
+
+            <Style TargetType="{x:Type ctrls:ButtonFrame}">
+                <Setter Property="Padding"
+                        Value="0" />
             </Style>
 
             <Style TargetType="{x:Type ActivityIndicator}">

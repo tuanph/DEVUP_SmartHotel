@@ -91,6 +91,15 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\ExtendedEntryRenderer.cs" />
+    <BundleResource Include="..\..\CommonResources\fonts\firasans\FiraSans-Bold.ttf">
+      <Link>Resources\fonts\FiraSans-Bold.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\CommonResources\fonts\firasans\FiraSans-Regular.ttf">
+      <Link>Resources\fonts\FiraSans-Regular.ttf</Link>
+    </BundleResource>
+    <BundleResource Include="..\..\CommonResources\fonts\firasans\FiraSans-SemiBold.ttf">
+      <Link>Resources\fonts\FiraSans-SemiBold.ttf</Link>
+    </BundleResource>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
@@ -461,7 +470,5 @@
   <ItemGroup>
     <BundleResource Include="Resources\thumb_slider.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\fonts\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>
