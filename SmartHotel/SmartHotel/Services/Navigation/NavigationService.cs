@@ -51,6 +51,28 @@ namespace SmartHotel.Services.Navigation
                 {
                     App.Current.MainPage = page;
                 }
+                else if (App.Current.MainPage is MainView)
+                {
+                    var mainPage = App.Current.MainPage as MainView;
+                    var navigationPage = mainPage.Detail as CustomNavigationPage;
+
+                    if (navigationPage != null)
+                    {
+                        var currentPage = navigationPage.CurrentPage;
+
+                        if (currentPage.GetType() != page.GetType())
+                        {
+                            await navigationPage.PushAsync(page);
+                        }
+                    }
+                    else
+                    {
+                        navigationPage = new CustomNavigationPage(page);
+                        mainPage.Detail = navigationPage;
+                    }
+
+                    mainPage.IsPresented = false;
+                }
                 await ((ViewModelBase)viewModel).InitializeAsync(parameter);
             }
             catch (Exception ex)

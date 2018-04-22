@@ -17,7 +17,7 @@ namespace SmartHotel
             InitializeComponent();
 
             MainPage = new NavigationPage(new SmartHotel.Views.LoginView());
-            BuildDependencies();
+           
         }
         public static void BuildDependencies()
         {
@@ -27,6 +27,7 @@ namespace SmartHotel
         protected override void OnStart()
         {
             // Handle when your app starts
+            BuildDependencies();
         }
 
         protected override void OnSleep()

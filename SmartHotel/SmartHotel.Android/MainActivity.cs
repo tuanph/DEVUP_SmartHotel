@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Acr.UserDialogs;
 using FFImageLoading.Forms.Droid;
+using CarouselView.FormsPlugin.Android;
 
 namespace SmartHotel.Droid
 {
@@ -23,6 +24,7 @@ namespace SmartHotel.Droid
             UserDialogs.Init(this);
             CachedImageRenderer.Init(true);
             Xamarin.FormsGoogleMaps.Init(this, bundle);
+            CarouselViewRenderer.Init();
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

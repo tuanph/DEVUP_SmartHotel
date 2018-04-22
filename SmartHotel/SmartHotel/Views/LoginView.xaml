@@ -60,11 +60,11 @@
                              Tablet="Center"
                              Phone="FillAndExpand" />
                 </Label.HorizontalOptions>
-                <Label.WidthRequest>
+                <!--<Label.WidthRequest>
                     <OnIdiom x:TypeArguments="x:Double"
                              Desktop="350"
                              Tablet="320" />
-                </Label.WidthRequest>
+                </Label.WidthRequest>-->
 
             </Label>
 
@@ -80,11 +80,11 @@
                              Tablet="Center"
                              Phone="FillAndExpand" />
                 </ctrls:ExtendedEntry.HorizontalOptions>
-                <ctrls:ExtendedEntry.WidthRequest>
+                <!--<ctrls:ExtendedEntry.WidthRequest>
                     <OnIdiom x:TypeArguments="x:Double"
                              Desktop="350"
                              Tablet="320" />
-                </ctrls:ExtendedEntry.WidthRequest>
+                </ctrls:ExtendedEntry.WidthRequest>-->
             </ctrls:ExtendedEntry>
 
             <Label Grid.Row="3"
@@ -96,11 +96,11 @@
                              Tablet="Center"
                              Phone="FillAndExpand" />
                 </Label.HorizontalOptions>
-                <Label.WidthRequest>
+                <!--<Label.WidthRequest>
                     <OnIdiom x:TypeArguments="x:Double"
                              Desktop="350"
                              Tablet="320" />
-                </Label.WidthRequest>
+                </Label.WidthRequest>-->
             </Label>
 
             <ctrls:ExtendedEntry Grid.Row="4"
@@ -116,11 +116,11 @@
                              Tablet="Center"
                              Phone="FillAndExpand" />
                 </ctrls:ExtendedEntry.HorizontalOptions>
-                <ctrls:ExtendedEntry.WidthRequest>
+                <!--<ctrls:ExtendedEntry.WidthRequest>
                     <OnIdiom x:TypeArguments="x:Double"
                              Desktop="350"
                              Tablet="320" />
-                </ctrls:ExtendedEntry.WidthRequest>
+                </ctrls:ExtendedEntry.WidthRequest>-->
             </ctrls:ExtendedEntry>
 
             <Label Grid.Row="5"

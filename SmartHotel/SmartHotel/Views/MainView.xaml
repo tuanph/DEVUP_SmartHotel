@@ -11,11 +11,7 @@
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
-        <NavigationPage>
-            <x:Arguments>
-                <local:HomeView />
-            </x:Arguments>
-        </NavigationPage>
+        <ContentPage BackgroundColor="Transparent" />
     </MasterDetailPage.Detail>
 
 </MasterDetailPage>

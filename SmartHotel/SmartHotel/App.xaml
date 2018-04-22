@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:SmartHotel.Converters"
              x:Class="SmartHotel.App">
     <Application.Resources>
 
@@ -69,6 +70,13 @@
                     Value="12" />
             </OnPlatform>
 
+            <OnPlatform x:Key="MidMediumSize"
+                        x:TypeArguments="x:Double">
+                <On Platform="iOS"
+                    Value="12" />
+                <On Platform="Android"
+                    Value="14" />
+            </OnPlatform>
 
             <OnPlatform x:Key="MediumSize"
                         x:TypeArguments="x:Double">
@@ -171,6 +179,10 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+
+            <!--CONVERTERS-->
+            <converters:NotificationTypeToIconConverter x:Key="NotificationTypeToIconConverter" />
+            <converters:NotificationTypeToTitleConverter x:Key="NotificationTypeToTitleConverter" />
 
         </ResourceDictionary>
     </Application.Resources>

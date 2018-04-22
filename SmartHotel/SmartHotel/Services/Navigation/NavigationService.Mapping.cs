@@ -12,6 +12,7 @@ namespace SmartHotel.Services.Navigation
             this.Map<LoginViewModel, LoginView>();
             this.Map<MainViewModel, MainView>();
             this.Map<HomeViewModel, HomeView>();
+            this.Map<NotificationsViewModel,NotificationsView>();
         }
 
         private void Map<TViewModel, TView>()

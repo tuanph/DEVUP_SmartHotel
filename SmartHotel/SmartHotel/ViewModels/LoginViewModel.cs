@@ -34,6 +34,7 @@ namespace SmartHotel.ViewModels
         private void Login()
         {
             NavigationService.NavigateToAsync<MainViewModel>();
+            //NavigationService.NavigateToAsync<HomeViewModel>();
         }
         private bool CanLogin()
         {

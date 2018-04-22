@@ -29,6 +29,8 @@ namespace SmartHotel.ViewModels.Base
             _containerBuilder.RegisterType<LoginViewModel>();
             _containerBuilder.RegisterType<MainViewModel>();
             _containerBuilder.RegisterType<HomeViewModel>();
+            _containerBuilder.RegisterType<NotificationsViewModel>();
+            _containerBuilder.RegisterType<MenuViewModel>();
         }
         public void Register<T, U>() where U : T
         {

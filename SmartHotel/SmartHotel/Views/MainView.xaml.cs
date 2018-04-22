@@ -14,7 +14,15 @@ namespace SmartHotel.Views
     {
         public MainView()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
 
         }
         protected override void OnAppearing()
