@@ -26,6 +26,25 @@
                         Value="48" />
             </Style>
 
+            <Color x:Key="BookConferencePanelColor">#378D93</Color>
+
+            <Style x:Key="BookConferencePanelStyle"
+                   TargetType="Grid">
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource BookConferencePanelColor}" />
+                <Setter Property="HeightRequest"
+                        Value="60" />
+                <Setter Property="VerticalOptions"
+                        Value="End" />
+            </Style>
+
+            <Style x:Key="BookConferencePanel2Style"
+                   TargetType="Grid"
+                   BasedOn="{StaticResource BookConferencePanelStyle}">
+                <Setter Property="HeightRequest"
+                        Value="48" />
+            </Style>
+
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
@@ -93,12 +112,9 @@
                     </Image.Source>
                 </Image>
             </Grid>
-            <BoxView Grid.Row="1"
-                     BackgroundColor="Red">
 
-            </BoxView>
-            <!-- NO BOOKING -->
-            <!--<Grid ColumnSpacing="0"
+            <!--NO BOOKING-->
+            <Grid ColumnSpacing="0"
                   RowSpacing="0"
                   Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -109,9 +125,9 @@
                     <RowDefinition Height="5.5*" />
                     <RowDefinition Height="4.5*" />
                 </Grid.RowDefinitions>
-                -->
-            <!-- BOOK A ROOM -->
-            <!--
+
+                <!--BOOK A ROOM-->
+
                 <Grid Grid.Row="0"
                       Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -135,9 +151,9 @@
                         <Label Text="Book Mayus" />
                     </Grid>
                 </Grid>
-                -->
-            <!-- BOOK CONFERENCE ROOM -->
-            <!--
+
+                <!--BOOK CONFERENCE ROOM-->
+
                 <Grid Grid.Row="0"
                       Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -162,9 +178,9 @@
                         <Label Text="BOOK A&#x0a;CONFERENCE ROOM" />
                     </Grid>
                 </Grid>
-                -->
-            <!-- RESTAURANT -->
-            <!--
+
+                <!--RESTAURANT-->
+
                 <Grid Grid.Row="1"
                       Grid.Column="0"
                       BackgroundColor="{StaticResource WhiteColor}">
@@ -183,9 +199,9 @@
                         <Label Text=" EatToday" />
                     </StackLayout>
                 </Grid>
-                -->
-            <!-- MORE INFO -->
-            <!--
+
+                <!--MORE INFO-->
+
                 <Grid Grid.Row="1"
                       Grid.Column="1"
                       RowSpacing="0">
@@ -200,9 +216,9 @@
                         </ffimageloading:CachedImage.Source>
                     </ffimageloading:CachedImage>
                 </Grid>
-            </Grid>-->
-            <!-- BOOKING -->
-            <!--<Grid ColumnSpacing="0"
+            </Grid>
+            <!--BOOKING-->
+            <Grid ColumnSpacing="0"
                   RowSpacing="0"
                   Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -213,9 +229,9 @@
                     <RowDefinition Height="4.5*" />
                     <RowDefinition Height="5.5*" />
                 </Grid.RowDefinitions>
-                -->
-            <!-- ROOM TEMPERATURE -->
-            <!--
+
+                <!--ROOM TEMPERATURE-->
+
                 <Grid Grid.Row="0"
                       Grid.Column="0"
                       BackgroundColor="{StaticResource GrayColor}">
@@ -236,9 +252,9 @@
                                            IsVisible="false" />
                     <Label Text="Room Temperature" />
                 </Grid>
-                -->
-            <!-- AMBIENT LIGHT -->
-            <!--
+
+                <!--AMBIENT LIGHT-->
+
                 <Grid Grid.Row="0"
                       Grid.Column="1"
                       BackgroundColor="{StaticResource GrayColor}">
@@ -279,9 +295,9 @@
                     <Label Grid.Row="1"
                            Text="BeGreen" />
                 </Grid>
-                -->
-            <!-- RESTAURANT -->
-            <!--
+
+                <!--RESTAURANT-->
+
                 <Grid Grid.Row="1"
                       Grid.Column="0"
                       BackgroundColor="{StaticResource WhiteColor}">
@@ -305,9 +321,9 @@
                         <Label Text="Go My Room May us" />
                     </Grid>
                 </Grid>
-                -->
-            <!-- MORE INFO -->
-            <!--
+
+                <!--MORE INFO-->
+
                 <Grid Grid.Row="1"
                       Grid.Column="1"
                       RowSpacing="0">
@@ -331,7 +347,7 @@
                         <Label Text="BookConferenceMayus" />
                     </Grid>
                 </Grid>
-            </Grid>-->
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
