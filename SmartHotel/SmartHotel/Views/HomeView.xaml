@@ -409,17 +409,22 @@
                     </Grid.RowDefinitions>
                     <StackLayout Grid.Row="0"
                                  Orientation="Horizontal">
-                        <Label Text="Suggestions" />
-                        <Label Text="See All"
+                        <Label Text="Suggestions"
+                               Style="{StaticResource SuggestionsTextStyle}" />
+                        <Label Text="See All ++"
+                               Style="{StaticResource SeeAllTextStyle}"
                                HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                     <StackLayout Grid.Row="1">
-                        <Label Text="Restaurant" />
-                        <Label Text="EatToday" />
+                        <Label Text="Restaurant"
+                               Style="{StaticResource RestaurantTextStyle}" />
+                        <Label Text="Go to DEVUP and have fun!"
+                               Style="{StaticResource RestaurantDetailTextStyle}" />
                     </StackLayout>
                     <Grid Grid.Row="2"
                           Style="{StaticResource GoMyRoomPanel2Style}">
-                        <Label Text="Go My Room May us" />
+                        <Label Text="GO TO MY ROOM"
+                               Style="{StaticResource BookTextStyle}" />
                     </Grid>
                 </Grid>
 
@@ -445,7 +450,8 @@
                     </ffimageloading:CachedImage>
                     <Grid Grid.Row="1"
                           Style="{StaticResource BookConferencePanel2Style}">
-                        <Label Text="BookConferenceMayus" />
+                        <Label Text="BOOK A CONFERENCE ROOM"
+                               Style="{StaticResource BookTextStyle}" />
                     </Grid>
                 </Grid>
             </Grid>
