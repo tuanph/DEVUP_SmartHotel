@@ -10,19 +10,46 @@ namespace SmartHotel.Views
     {
         public CustomNavigationPage() : base()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (System.Exception ex)
+            {
+
+                throw;
+            }
+
         }
 
         public CustomNavigationPage(Page root) : base(root)
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (System.Exception ex)
+            {
+
+                throw;
+            }
+
         }
         internal void ApplyNavigationTextColor(Page targetPage)
         {
-            var color = NavigationBarAttachedProperty.GetTextColor(targetPage);
-            BarTextColor = color == Color.Default
-                ? Color.White
-                : color;
+            try
+            {
+                var color = NavigationBarAttachedProperty.GetTextColor(targetPage);
+                BarTextColor = color == Color.Default
+                    ? Color.White
+                    : color;
+            }
+            catch (System.Exception ex)
+            {
+
+                throw;
+            }
+
         }
     }
 }

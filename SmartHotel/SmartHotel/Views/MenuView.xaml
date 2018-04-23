@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartHotel.Views.MenuView"
+             xmlns:behaviors="clr-namespace:SmartHotel.Behaviors"
              xmlns:viewTemplate="clr-namespace:SmartHotel.Views.Templates">
     <ContentPage.Icon>
         <OnPlatform x:TypeArguments="FileImageSource">
@@ -29,143 +30,11 @@
                    HorizontalOptions="Center"
                    Margin="0,0,0,20"
                    VerticalOptions="End" />
-
-            <!--<ScrollView Grid.Row="1">
-                <Grid RowSpacing="30"
-                      ColumnSpacing="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*" />
-                        <ColumnDefinition Width="7*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Image Grid.Row="0"
-                           Grid.Column="0"
-                           Source="ic_bed"
-                           Aspect="AspectFill"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center"
-                           HeightRequest="60">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnBookingMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Image.GestureRecognizers>
-
-                    </Image>
-                    <Label Grid.Row="0"
-                           Grid.Column="1"
-                           Text="Book a room"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Center">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnBookingMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Label.GestureRecognizers>
-                    </Label>
-
-                    <Image Grid.Row="1"
-                           Grid.Column="0"
-                           Source="ic_key"
-                           Aspect="AspectFill"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center"
-                           HeightRequest="60">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnMyRoomMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Image.GestureRecognizers>
-
-                    </Image>
-                    <Label Grid.Row="1"
-                           Grid.Column="1"
-                           Text="My room"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Center">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnMyRoomMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Label.GestureRecognizers>
-                    </Label>
-
-                    <Image Grid.Row="2"
-                           Grid.Column="0"
-                           Source="ic_beach"
-                           Aspect="AspectFill"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnSuggestionMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Label Grid.Row="2"
-                           Grid.Column="1"
-                           Text="Suggestions"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Center">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnSuggestionMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Label.GestureRecognizers>
-                    </Label>
-
-                    <Image Grid.Row="3"
-                           Grid.Column="0"
-                           Source="ic_bot"
-                           Aspect="AspectFill"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnConciergeMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Label Grid.Row="3"
-                           Grid.Column="1"
-                           Text="Concierge"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Center">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnConciergeMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Label.GestureRecognizers>
-                    </Label>
-
-                    <Image Grid.Row="4"
-                           Grid.Column="0"
-                           Source="ic_logout"
-                           Aspect="AspectFill"
-                           HorizontalOptions="End"
-                           VerticalOptions="Center">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnLogoutMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Image.GestureRecognizers>
-                    </Image>
-                    <Label Grid.Row="4"
-                           Grid.Column="1"
-                           Text="Logout"
-                           HorizontalOptions="Start"
-                           VerticalOptions="Center">
-                        <Label.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="OnLogoutMenuTapped"
-                                                  NumberOfTapsRequired="1" />
-                        </Label.GestureRecognizers>
-                    </Label>
-                </Grid>
-            </ScrollView>-->
             <ListView Grid.Row="1"
                       x:Name="listViewMenuItem"
                       ItemsSource="{Binding Menus}"
                       RowHeight="60"
-                      ItemSelected="listViewMenuItem_OnItemSelected"
+                      behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding MenuItemSelectedCommand}"
                       SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>

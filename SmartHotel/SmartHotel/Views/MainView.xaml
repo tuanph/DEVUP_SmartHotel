@@ -7,7 +7,7 @@
                   Padding="20,0,0,0">
 
     <MasterDetailPage.Master>
-        <local:MenuView Title="Menu" />
+        <local:MenuView Title="Menu" BindingContext="{Binding MenuViewModel}" />
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
