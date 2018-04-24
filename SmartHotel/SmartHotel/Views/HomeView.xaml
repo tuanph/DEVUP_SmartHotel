@@ -153,8 +153,7 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <Grid RowSpacing="0"
-              Margin="0,-20,0,0">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="4.6*" />
                 <RowDefinition Height="5.4*" />
@@ -206,19 +205,21 @@
             </Grid>
 
             <!--NO BOOKING-->
-            <Grid Grid.Row="1"
+            <!--<Grid Grid.Row="1"
                   ColumnSpacing="0"
                   RowSpacing="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5.5*" />
                     <RowDefinition Height="4.5*" />
                 </Grid.RowDefinitions>
 
-                <!--BOOK A ROOM-->
+                -->
+            <!--BOOK A ROOM-->
+            <!--
                 <Grid Grid.Row="0"
                       Grid.Column="0">
                     <Grid.RowDefinitions>
@@ -226,7 +227,6 @@
                         <RowDefinition Height="25*" />
                     </Grid.RowDefinitions>
                     <ffimageloading:CachedImage Grid.Row="0"
-                                                Grid.RowSpan="2"
                                                 Aspect="AspectFill">
                         <ffimageloading:CachedImage.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
@@ -243,7 +243,9 @@
                                Style="{StaticResource BookTextStyle}" />
                     </Grid>
                 </Grid>
-                <!--BOOK CONFERENCE ROOM-->
+                -->
+            <!--BOOK CONFERENCE ROOM-->
+            <!--
                 <Grid Grid.Row="0"
                       Grid.Column="1">
                     <Grid.RowDefinitions>
@@ -251,7 +253,6 @@
                         <RowDefinition Height="25*" />
                     </Grid.RowDefinitions>
                     <ffimageloading:CachedImage Grid.Row="0"
-                                                Grid.RowSpan="2"
                                                 Source="img_2"
                                                 Aspect="AspectFill">
                         <ffimageloading:CachedImage.Source>
@@ -265,12 +266,14 @@
                     </ffimageloading:CachedImage>
                     <Grid Grid.Row="1"
                           BackgroundColor="{StaticResource WhiteColor}">
-                        <Label Text="BOOK A&#x0a;CONFERENCE ROOM"
+                        <Label Text="BOOK ROOM"
                                Style="{StaticResource BookConferenceTextStyle}" />
                     </Grid>
                 </Grid>
 
-                <!--RESTAURANT-->
+                -->
+            <!--RESTAURANT-->
+            <!--
 
                 <Grid Grid.Row="1"
                       Grid.Column="0"
@@ -295,7 +298,9 @@
                     </StackLayout>
                 </Grid>
 
-                <!--MORE INFO-->
+                -->
+            <!--MORE INFO-->
+            <!--
                 <Grid Grid.Row="1"
                       Grid.Column="1"
                       RowSpacing="0">
@@ -310,7 +315,9 @@
                         </ffimageloading:CachedImage.Source>
                     </ffimageloading:CachedImage>
                 </Grid>
-            </Grid>
+            </Grid>-->
+
+
             <!--BOOKING-->
             <Grid  Grid.Row="1"
                    ColumnSpacing="0"
@@ -324,14 +331,13 @@
                     <RowDefinition Height="5.5*" />
                 </Grid.RowDefinitions>
 
-                <!--ROOM TEMPERATURE-->
 
+                <!--ROOM TEMPERATURE-->
                 <Grid Grid.Row="0"
                       Grid.Column="0"
                       BackgroundColor="{StaticResource GrayColor}">
                     <ffimageloading:CachedImage Aspect="AspectFit"
-                                                VerticalOptions="End"
-                                                Margin="12, 24, 12, 12">
+                                                VerticalOptions="End">
                         <ffimageloading:CachedImage.Source>
                             <OnPlatform x:TypeArguments="ImageSource">
                                 <On Platform="Android, iOS"
@@ -349,7 +355,6 @@
                 </Grid>
 
                 <!--AMBIENT LIGHT-->
-
                 <Grid Grid.Row="0"
                       Grid.Column="1"
                       BackgroundColor="{StaticResource GrayColor}">
@@ -393,8 +398,8 @@
                            Style="{StaticResource BeGreenTextStyle}" />
                 </Grid>
 
-                <!--RESTAURANT-->
 
+                <!--RESTAURANT-->
                 <Grid Grid.Row="1"
                       Grid.Column="0"
                       BackgroundColor="{StaticResource WhiteColor}">
@@ -425,7 +430,6 @@
                 </Grid>
 
                 <!--MORE INFO-->
-
                 <Grid Grid.Row="1"
                       Grid.Column="1"
                       RowSpacing="0">

@@ -1,5 +1,6 @@
 ﻿using SmartHotel.Mvvm.Commands;
 using SmartHotel.Services;
+using SmartHotel.Services.Authentication;
 using SmartHotel.ViewModels.Base;
 using System.ComponentModel;
 
@@ -11,6 +12,7 @@ namespace SmartHotel.ViewModels
         private string _userName = string.Empty;
         private string _passWord = string.Empty;
         private string _passwordStrength = string.Empty;
+        private IAuthenticationService _IAuthenticationService;
 
         public string UserName
         {
@@ -23,17 +25,27 @@ namespace SmartHotel.ViewModels
             get => _passWord;
             set => SetProperty(ref _passWord, value);
         }
-        public LoginViewModel()
+        public LoginViewModel(IAuthenticationService IAuthenticationService)
         {
+            _IAuthenticationService = IAuthenticationService;
             LoginCommand = new DelegateCommand(Login, CanLogin)
                 .ObservesProperty(() => UserName)
                 .ObservesProperty(() => Password);
         }
         public DelegateCommand LoginCommand { get; }
 
-        private void Login()
+        private async void Login()
         {
-            NavigationService.NavigateToAsync<MainViewModel>();
+            IsBusy = true;
+            if (await _IAuthenticationService.LoginAsync(UserName, Password))
+            {
+                await NavigationService.NavigateToAsync<MainViewModel>();
+            }
+            else
+            {
+                await DialogService.ShowAlertAsync("Username or password invald.", "Information", "Ok");
+            }
+            IsBusy = false;
             //NavigationService.NavigateToAsync<HomeViewModel>();
         }
         private bool CanLogin()

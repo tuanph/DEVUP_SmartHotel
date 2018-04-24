@@ -68,7 +68,7 @@ namespace SmartHotel.Services.Navigation
                     else
                     {
                         navigationPage = new CustomNavigationPage(page);
-                        mainPage.Detail = navigationPage;
+                        mainPage.Detail = navigationPage; // just set detail page, because Master page is Menu Page
                     }
 
                     mainPage.IsPresented = false;

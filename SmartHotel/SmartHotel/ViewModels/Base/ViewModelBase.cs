@@ -1,4 +1,5 @@
 ﻿using SmartHotel.Mvvm;
+using SmartHotel.Services.Dialog;
 using SmartHotel.Services.Navigation;
 using System.Threading.Tasks;
 
@@ -21,9 +22,11 @@ namespace SmartHotel.ViewModels.Base
         }
 
         protected INavigationService NavigationService;
+        protected IDialogService DialogService;
         public ViewModelBase()
         {
             NavigationService = Locator.Instance.Reslove<INavigationService>();
+            DialogService = Locator.Instance.Reslove<IDialogService>();
         }
         public virtual Task InitializeAsync(object navigationData)// pre load data before 
         {

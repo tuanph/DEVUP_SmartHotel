@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using SmartHotel.Services.Authentication;
 using SmartHotel.Services.Dialog;
 using SmartHotel.Services.Navigation;
 using System;
@@ -24,6 +25,7 @@ namespace SmartHotel.ViewModels.Base
             _containerBuilder = new ContainerBuilder();
             _containerBuilder.RegisterType<DialogService>().As<IDialogService>();
             _containerBuilder.RegisterType<NavigationService>().As<INavigationService>();
+            _containerBuilder.RegisterType<FakeAuthenticationService>().As<IAuthenticationService>();
 
             //Register viewmodel
             _containerBuilder.RegisterType<LoginViewModel>();
