@@ -44,6 +44,7 @@ namespace SmartHotel.ViewModels
 
         private async void OnDelete(Models.Notification notification)
         {
+            await Task.FromResult(0);
             //if (notification != null)
             //{
             //    Notifications.Remove(notification);

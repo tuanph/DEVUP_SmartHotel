@@ -301,6 +301,9 @@
             <!--CONVERTERS-->
             <converters:NotificationTypeToIconConverter x:Key="NotificationTypeToIconConverter" />
             <converters:NotificationTypeToTitleConverter x:Key="NotificationTypeToTitleConverter" />
+            <converters:AmbientLightValueConverter x:Key="AmbientLightValueConverter" />
+            <converters:TemperatureValueConverter x:Key="TemperatureValueConverter" />
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
 
         </ResourceDictionary>
     </Application.Resources>

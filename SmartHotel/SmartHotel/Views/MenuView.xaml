@@ -29,7 +29,8 @@
                    Text="Hello, Tuan Pham"
                    HorizontalOptions="Center"
                    Margin="0,0,0,20"
-                   VerticalOptions="End" />
+                   VerticalOptions="End"
+                   TextColor="White" />
             <ListView Grid.Row="1"
                       x:Name="listViewMenuItem"
                       ItemsSource="{Binding Menus}"

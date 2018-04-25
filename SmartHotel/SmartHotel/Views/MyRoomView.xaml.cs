@@ -14,7 +14,20 @@ namespace SmartHotel.Views
 	{
 		public MyRoomView ()
 		{
-			InitializeComponent ();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+			
 		}
-	}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            //StatusBarHelper.Instance.MakeTranslucentStatusBar(false);
+        }
+    }
 }
