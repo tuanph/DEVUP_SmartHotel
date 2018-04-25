@@ -27,7 +27,18 @@ namespace SmartHotel.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            this.SizeChanged += OnSizeChanged;
             //StatusBarHelper.Instance.MakeTranslucentStatusBar(false);
+        }
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            this.SizeChanged -= OnSizeChanged;
+        }
+
+        private void OnSizeChanged(object sender, EventArgs e)
+        {
+            AmbientLightSlider.WidthRequest = Width;
         }
     }
 }

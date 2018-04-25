@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:SmartHotel.Controls"
-             x:Class="SmartHotel.Views.MyRoomView">
+             x:Class="SmartHotel.Views.MyRoomView"
+             xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:utils="clr-namespace:SmartHotel.Utils"
+             utils:NavigationBarAttachedProperty.TextColor="{StaticResource WhiteColor}"
+             Title="503">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="CheckoutPanelStyle"
@@ -132,6 +136,55 @@
                 </Setter>
             </Style>
 
+
+            <xamanimation:StoryBoard x:Key="FloatingActionButtonInitialAnimation"
+                                     Target="{x:Reference FloatingActionButton}">
+                <xamanimation:TranslateToAnimation TranslateY="600"
+                                                   Duration="0" />
+                <xamanimation:TranslateToAnimation TranslateY="0"
+                                                   Easing="SpringOut"
+                                                   Duration="800" />
+            </xamanimation:StoryBoard>
+
+            <xamanimation:StoryBoard x:Key="AmbientAnimation"
+                                     Target="{x:Reference AmbientPanel}">
+                <xamanimation:FadeToAnimation  Opacity="0"
+                                               Duration="0" />
+                <xamanimation:TranslateToAnimation TranslateX="600"
+                                                   Duration="0" />
+                <xamanimation:FadeToAnimation Opacity="1"
+                                              Duration="150" />
+                <xamanimation:TranslateToAnimation TranslateX="0"
+                                                   Easing="SpringOut"
+                                                   Duration="200" />
+            </xamanimation:StoryBoard>
+
+            <xamanimation:StoryBoard x:Key="NeedAnimation"
+                                     Target="{x:Reference NeedPanel}">
+                <xamanimation:FadeToAnimation  Opacity="0"
+                                               Duration="0" />
+                <xamanimation:TranslateToAnimation TranslateX="600"
+                                                   Duration="0" />
+                <xamanimation:FadeToAnimation Opacity="1"
+                                              Duration="150" />
+                <xamanimation:TranslateToAnimation TranslateX="0"
+                                                   Easing="SpringOut"
+                                                   Duration="200" />
+            </xamanimation:StoryBoard>
+
+            <xamanimation:StoryBoard x:Key="FindAnimation"
+                                     Target="{x:Reference FindPanel}">
+                <xamanimation:FadeToAnimation  Opacity="0"
+                                               Duration="0" />
+                <xamanimation:TranslateToAnimation TranslateX="600"
+                                                   Duration="0" />
+                <xamanimation:FadeToAnimation Opacity="1"
+                                              Duration="150" />
+                <xamanimation:TranslateToAnimation TranslateX="0"
+                                                   Easing="SpringOut"
+                                                   Duration="200" />
+            </xamanimation:StoryBoard>
+
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
@@ -147,15 +200,20 @@
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
+    <ContentPage.Triggers>
+        <EventTrigger Event="Appearing">
+            <xamanimation:BeginAnimation Animation="{StaticResource FloatingActionButtonInitialAnimation}" />
+        </EventTrigger>
+    </ContentPage.Triggers>
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
+                <!--<RowDefinition Height="Auto" />-->
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <controls:iOSStatusBarBackground Grid.Row="0" />
+            <!--<controls:iOSStatusBarBackground Grid.Row="0" />-->
 
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="3.2*" />
                     <RowDefinition Height="6.8*" />
@@ -306,7 +364,16 @@
                         <!--Ambient Panel-->
                         <Grid x:Name="AmbientPanel"
                               IsVisible="{Binding Ambient}"
-                              Opacity="1">
+                              Opacity="0">
+                            <Grid.Triggers>
+                                <Trigger TargetType="Grid"
+                                         Property="Grid.IsVisible"
+                                         Value="True">
+                                    <Trigger.EnterActions>
+                                        <xamanimation:BeginAnimation Animation="{StaticResource AmbientAnimation}" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Grid.Triggers>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="50" />
@@ -462,7 +529,16 @@
                               IsVisible="{Binding Need}"
                               HorizontalOptions="Fill"
                               VerticalOptions="Start"
-                              Opacity="1">
+                              Opacity="0">
+                            <Grid.Triggers>
+                                <Trigger TargetType="Grid"
+                                         Property="Grid.IsVisible"
+                                         Value="True">
+                                    <Trigger.EnterActions>
+                                        <xamanimation:BeginAnimation Animation="{StaticResource NeedAnimation}" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Grid.Triggers>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
@@ -584,7 +660,6 @@
                                 </controls:ToggleButton.UnCheckedImage>
                             </controls:ToggleButton>
                         </Grid>
-                        
                         <Image x:Name="FloatingActionButton"
                                IsVisible="{Binding Need}"
                                Style="{StaticResource BotImageStyle}">
@@ -600,11 +675,19 @@
                                 </OnPlatform>
                             </Image.Source>
                         </Image>
-                        
                         <!--Find Panel-->
                         <Grid x:Name="FindPanel"
                               IsVisible="{Binding Find}"
-                              Opacity="1">
+                              Opacity="0">
+                            <Grid.Triggers>
+                                <Trigger TargetType="Grid"
+                                         Property="Grid.IsVisible"
+                                         Value="True">
+                                    <Trigger.EnterActions>
+                                        <xamanimation:BeginAnimation Animation="{StaticResource FindAnimation}" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </Grid.Triggers>
                             <Image Aspect="AspectFill">
                                 <Image.Source>
                                     <OnIdiom x:TypeArguments="ImageSource">
