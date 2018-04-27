@@ -304,6 +304,8 @@
             <converters:AmbientLightValueConverter x:Key="AmbientLightValueConverter" />
             <converters:TemperatureValueConverter x:Key="TemperatureValueConverter" />
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:SelectedToBoolConverter x:Key="SelectedToBoolConverter" />
+            <converters:EnabledToHeightConverter x:Key="EnabledToHeightConverter" />
 
         </ResourceDictionary>
     </Application.Resources>
