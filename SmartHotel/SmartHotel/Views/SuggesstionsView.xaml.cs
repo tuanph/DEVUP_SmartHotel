@@ -14,6 +14,12 @@ namespace SmartHotel.Views
             try
             {
                 InitializeComponent();
+                if (Device.RuntimePlatform != Device.iOS)
+                {
+                    NavigationPage.SetHasNavigationBar(this, false);
+                }
+
+                NavigationPage.SetBackButtonTitle(this, string.Empty);
                 MapHelper.CenterMapInDefaultLocation(this.Map);
             }
             catch (Exception ex)
@@ -21,6 +27,11 @@ namespace SmartHotel.Views
                 Debug.WriteLine("CustomError_SuggesstionsView: " + ex.ToString());
             }
 
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            StatusBarHelper.Instance.MakeTranslucentStatusBar(false);
         }
     }
 }
