@@ -3,6 +3,8 @@ using SmartHotel.Services;
 using SmartHotel.Services.Authentication;
 using SmartHotel.ViewModels.Base;
 using System.ComponentModel;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace SmartHotel.ViewModels
 {
@@ -33,7 +35,7 @@ namespace SmartHotel.ViewModels
                 .ObservesProperty(() => Password);
         }
         public DelegateCommand LoginCommand { get; }
-
+        //public ICommand LoginCommand => new Command(Login);
         private async void Login()
         {
             IsBusy = true;

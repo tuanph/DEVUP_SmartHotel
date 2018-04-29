@@ -14,7 +14,7 @@ namespace SmartHotel.ViewModels
         {
             return Task.WhenAll
                 (
-                    //_menuViewModel.InitializeAsync(navigationData),
+                    MenuViewModel.InitializeAsync(navigationData),
                     NavigationService.NavigateToAsync<HomeViewModel>()
                 );
         }

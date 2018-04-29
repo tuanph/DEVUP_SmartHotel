@@ -7424,6 +7424,9 @@ namespace SmartHotel.Droid
 			// aapt resource value: 0x7f0e004d
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131624013;
 			
+			// aapt resource value: 0x7f0e018f
+			public const int SplashTheme = 2131624335;
+			
 			// aapt resource value: 0x7f0e00dd
 			public const int TextAppearance_AppCompat = 2131624157;
 			

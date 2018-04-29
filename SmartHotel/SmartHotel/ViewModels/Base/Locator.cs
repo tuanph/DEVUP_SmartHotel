@@ -41,6 +41,7 @@ namespace SmartHotel.ViewModels.Base
             _containerBuilder.RegisterType<ConciergeViewModel>();
             _containerBuilder.RegisterType<MyRoomViewModel>();
             _containerBuilder.RegisterType<SuggesstionsViewModel>();
+            _containerBuilder.RegisterType<ExtendedSplashViewModel>();
         }
         public void Register<T, U>() where U : T
         {

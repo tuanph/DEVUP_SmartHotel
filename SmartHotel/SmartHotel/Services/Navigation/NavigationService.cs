@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SmartHotel.ViewModels;
 using SmartHotel.ViewModels.Base;
 using SmartHotel.Views;
 using Xamarin.Forms;
@@ -15,6 +16,17 @@ namespace SmartHotel.Services.Navigation
             _mappings = new Dictionary<Type, Type>();
             //Map viewModel to View
             this.CreatePageViewModelMappings();
+        }
+        public async Task InitializeAsync(bool isLogin)
+        {
+            if (isLogin)
+            {
+                await NavigateToAsync<MainViewModel>();
+            }
+            else
+            {
+                await NavigateToAsync<LoginViewModel>();
+            }
         }
         public Task NavigateBackAsync()
         {
@@ -72,6 +84,19 @@ namespace SmartHotel.Services.Navigation
                     }
 
                     mainPage.IsPresented = false;
+                }
+                else
+                {
+                    var navigationPage = App.Current.MainPage as CustomNavigationPage;
+
+                    if (navigationPage != null)
+                    {
+                        await navigationPage.PushAsync(page);
+                    }
+                    else
+                    {
+                        App.Current.MainPage = new CustomNavigationPage(page);
+                    }
                 }
                 await ((ViewModelBase)viewModel).InitializeAsync(parameter);
             }

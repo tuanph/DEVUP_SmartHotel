@@ -17,8 +17,9 @@ namespace SmartHotel
         public static void BuildDependencies()
         {
             Locator.Instance.Build();
-            //Locator.Instance.Reslove<INavigationService>().NavigateToAsync<LoginViewModel>();
-            Locator.Instance.Reslove<INavigationService>().NavigateToAsync<MainViewModel>();
+            Locator.Instance.Reslove<INavigationService>().NavigateToAsync<LoginViewModel>();
+            //Locator.Instance.Reslove<INavigationService>().NavigateToAsync<MainViewModel>();
+            //Locator.Instance.Reslove<INavigationService>().NavigateToAsync<ExtendedSplashViewModel>(false);
         }
         protected override void OnStart()
         {

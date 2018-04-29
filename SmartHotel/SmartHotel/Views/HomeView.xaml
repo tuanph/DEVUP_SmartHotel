@@ -176,7 +176,7 @@
                                               Orientation="Horizontal"
                                               InterPageSpacing="0"
                                               ShowIndicators="True"
-                                              ShowArrows="True"
+                                              ShowArrows="False"
                                               CurrentPageIndicatorTintColor="{StaticResource WhiteColor}"
                                               ItemsSource="{Binding Notifications, Mode=OneWay}">
 

@@ -17,6 +17,7 @@ namespace SmartHotel.Services.Navigation
             this.Map<ConciergeViewModel, ConciergeView>();
             this.Map<MyRoomViewModel, MyRoomView>();
             this.Map<SuggesstionsViewModel, SuggesstionsView>();
+            this.Map<ExtendedSplashViewModel, ExtendedSplashView>();
         }
 
         private void Map<TViewModel, TView>()
@@ -24,7 +25,6 @@ namespace SmartHotel.Services.Navigation
             where TView : Page
         {
             this._mappings.Add(typeof(TViewModel), typeof(TView));
-            //Should be set Binding context here ????
         }
     }
 }

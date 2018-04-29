@@ -4,6 +4,7 @@
              x:Class="SmartHotel.Views.BookingView"
              xmlns:utils="clr-namespace:SmartHotel.Utils"
              xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              utils:NavigationBarAttachedProperty.TextColor="{StaticResource WhiteColor}"
              xmlns:controls="clr-namespace:SmartHotel.Controls">
     <ContentPage.Resources>
@@ -207,22 +208,26 @@
                                                 <ColumnDefinition Width="Auto" />
                                                 <ColumnDefinition Width="12" />
                                             </Grid.ColumnDefinitions>
-                                            <Image Grid.Column="1"
-                                                   x:Name="SuggestionCorner"
-                                                   Aspect="AspectFit"
-                                                   IsVisible="{Binding Source={x:Reference Suggestions}, Path=SelectedItem, 
+                                            <ffimageloading:CachedImage Grid.Column="1"
+                                                                        x:Name="SuggestionCorner"
+                                                                        Aspect="AspectFit"
+                                                                        CacheType="Disk"
+                                                                        CacheDuration="30"
+                                                                        IsVisible="{Binding Source={x:Reference Suggestions}, Path=SelectedItem, 
                                                 Converter={StaticResource SelectedToBoolConverter},
                                                 ConverterParameter={x:Reference SuggestionCell}}"
-                                                   Margin="0, 2">
-                                                <Image.Source>
+                                                                        Margin="0, 2">
+                                                <ffimageloading:CachedImage.Source>
                                                     <OnPlatform x:TypeArguments="ImageSource">
                                                         <On Platform="Android, iOS"
                                                             Value="ball_left" />
                                                         <On Platform="UWP"
-                                                            Value="Assets/ball_left.png" />
+                                                            Value="Assets/Assets/ball_left.png" />
                                                     </OnPlatform>
-                                                </Image.Source>
-                                            </Image>
+                                                </ffimageloading:CachedImage.Source>
+                                            </ffimageloading:CachedImage>
+
+
                                             <Grid Grid.Column="2"
                                                   HeightRequest="{Binding Source={x:Reference SuggestionCorner}, Path=HeightRequest}"
                                                   BackgroundColor="{StaticResource SelectedBackgroundColor}"
@@ -238,21 +243,24 @@
                                                     </OnPlatform>
                                                 </Grid.Margin>
                                             </Grid>
-                                            <Image Grid.Column="3"
-                                                   Aspect="AspectFit"
-                                                   IsVisible="{Binding Source={x:Reference Suggestions}, Path=SelectedItem, 
+                                            <ffimageloading:CachedImage Grid.Column="3"
+                                                                        x:Name="SuggestionCorner2"
+                                                                        Aspect="AspectFit"
+                                                                        CacheType="Disk"
+                                                                        CacheDuration="30"
+                                                                        IsVisible="{Binding Source={x:Reference Suggestions}, Path=SelectedItem, 
                                                 Converter={StaticResource SelectedToBoolConverter},
                                                 ConverterParameter={x:Reference SuggestionCell}}"
-                                                   Margin="0, 2">
-                                                <Image.Source>
+                                                                        Margin="0, 2">
+                                                <ffimageloading:CachedImage.Source>
                                                     <OnPlatform x:TypeArguments="ImageSource">
                                                         <On Platform="Android, iOS"
                                                             Value="ball_right" />
                                                         <On Platform="UWP"
-                                                            Value="Assets/ball_right.png" />
+                                                            Value="Assets/Assets/ball_right.png" />
                                                     </OnPlatform>
-                                                </Image.Source>
-                                            </Image>
+                                                </ffimageloading:CachedImage.Source>
+                                            </ffimageloading:CachedImage>
                                             <Label Grid.Column="0"
                                                    Grid.ColumnSpan="3"
                                                    Text="{Binding}"
