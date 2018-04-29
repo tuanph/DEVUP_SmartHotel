@@ -158,7 +158,6 @@
             </OnPlatform>
 
             <!-- STYLES -->
-            <!-- STYLES -->
             <Style x:Key="BaseLabelStyle"
                    TargetType="{x:Type Label}">
             </Style>
@@ -305,8 +304,10 @@
             <converters:TemperatureValueConverter x:Key="TemperatureValueConverter" />
             <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
             <converters:SelectedToBoolConverter x:Key="SelectedToBoolConverter" />
-            <converters:EnabledToHeightConverter x:Key="EnabledToHeightConverter" />
-
+            <converters:EnabledToHeightConverter x:Key="EnabledToHeightConverter" /> 
+            <converters:SuggestionTypeToColorConverter x:Key="SuggestionTypeToColorConverter" />
+            <converters:HotelImageConverter x:Key="HotelImageConverter" />
+            
         </ResourceDictionary>
     </Application.Resources>
 </Application>

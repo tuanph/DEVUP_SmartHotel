@@ -22,7 +22,7 @@ namespace SmartHotel.Droid
 
             base.OnCreate(bundle);
             UserDialogs.Init(this);
-            CachedImageRenderer.Init(true);
+            CachedImageRenderer.Init(false); // set false to fix issue height wrong
             Xamarin.FormsGoogleMaps.Init(this, bundle);
             CarouselViewRenderer.Init();
             global::Xamarin.Forms.Forms.Init(this, bundle);

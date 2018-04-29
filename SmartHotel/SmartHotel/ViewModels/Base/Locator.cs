@@ -3,6 +3,7 @@ using SmartHotel.Services.Authentication;
 using SmartHotel.Services.Dialog;
 using SmartHotel.Services.Hotel;
 using SmartHotel.Services.Navigation;
+using SmartHotel.Services.Suggestion;
 using System;
 
 namespace SmartHotel.ViewModels.Base
@@ -28,6 +29,7 @@ namespace SmartHotel.ViewModels.Base
             _containerBuilder.RegisterType<NavigationService>().As<INavigationService>();
             _containerBuilder.RegisterType<FakeAuthenticationService>().As<IAuthenticationService>();
             _containerBuilder.RegisterType<FakeHotelService>().As<IHotelService>();
+            _containerBuilder.RegisterType<FakeSuggestionService>().As<ISuggestionService>();
 
             //Register viewmodel
             _containerBuilder.RegisterType<LoginViewModel>();

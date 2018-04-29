@@ -70,9 +70,8 @@
     <EmbeddedResource Update="Views\Templates\NotificationItemTemplate.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Helpers\" />
+    <EmbeddedResource Update="Views\Templates\SuggestionItemTemplate.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

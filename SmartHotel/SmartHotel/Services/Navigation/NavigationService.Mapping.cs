@@ -16,6 +16,7 @@ namespace SmartHotel.Services.Navigation
             this.Map<BookingViewModel, BookingView>();
             this.Map<ConciergeViewModel, ConciergeView>();
             this.Map<MyRoomViewModel, MyRoomView>();
+            this.Map<SuggesstionsViewModel, SuggesstionsView>();
         }
 
         private void Map<TViewModel, TView>()

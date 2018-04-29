@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SmartHotel.Views.SuggesstionsView">
+             x:Class="SmartHotel.Views.SuggesstionsView"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             xmlns:controls="clr-namespace:SmartHotel.Controls"
+             xmlns:templates="clr-namespace:SmartHotel.Views.Templates">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="SuggesstionsView"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="240" />
+            </Grid.RowDefinitions>
+            <controls:iOSStatusBarBackground Grid.Row="0" />
+            <!--Map-->
+            <AbsoluteLayout Grid.Row="1">
+                <controls:CustomMap x:Name="Map"
+                                    CustomPins="{Binding CustomPins}"
+                                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                                    AbsoluteLayout.LayoutFlags="All" />
+            </AbsoluteLayout>
+            <ActivityIndicator Grid.Row="1"
+                               Color="{StaticResource AccentColor}"
+                               IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}" />
+            <!--List Suggesttion Hotel-->
+            <Grid Grid.Row="2"
+                  BackgroundColor="{StaticResource WhiteColor}">
+                <controls:HorizontalList ListOrientation="Horizontal"
+                                         Margin="0, 5, 0, 0"
+                                         ItemsSource="{Binding Suggestions}">
+                    <controls:HorizontalList.ItemTemplate>
+                        <DataTemplate>
+                            <templates:SuggestionItemTemplate />
+                        </DataTemplate>
+                    </controls:HorizontalList.ItemTemplate>
+                </controls:HorizontalList>
+            </Grid>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
