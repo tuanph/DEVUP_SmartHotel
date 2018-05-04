@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using SmartHotel.ViewModels;
 using SmartHotel.ViewModels.Base;
 using SmartHotel.Views;
@@ -107,6 +109,30 @@ namespace SmartHotel.Services.Navigation
             }
 
 
+        }
+
+
+        //Navigate by show pop up
+        public Task NavigateToPopupAsync<TViewModel>(bool animate) where TViewModel : ViewModelBase
+        {
+            return NavigateToPopupAsync<TViewModel>(null, animate);
+        }
+
+        public async Task NavigateToPopupAsync<TViewModel>(object parameter, bool animate) where TViewModel : ViewModelBase
+        {
+            var pageType = _mappings[typeof(TViewModel)];
+            var page = (Page)Activator.CreateInstance(pageType);//create object at run time
+            var viewModel = page.BindingContext = Locator.Instance.Resolve(typeof(TViewModel));
+            await (page.BindingContext as ViewModelBase).InitializeAsync(parameter);
+
+            if (page is PopupPage)
+            {
+                await PopupNavigation.PushAsync(page as PopupPage, animate);
+            }
+            else
+            {
+                throw new ArgumentException($"The type ${typeof(TViewModel)} its not a PopupPage type");
+            }
         }
     }
 }

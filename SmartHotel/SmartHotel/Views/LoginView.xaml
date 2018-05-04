@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SmartHotel.Views.LoginView"
              xmlns:converters="clr-namespace:SmartHotel.Converters"
+             xmlns:effects="clr-namespace:SmartHotel.Effects"
              xmlns:ctrls="clr-namespace:SmartHotel.Controls">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -23,6 +24,24 @@
                                 Value="5, 0, 0, 0" />
                             <On Platform="iOS"
                                 Value="0, 8, 0, 0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style x:Key="ForgotPwdLabelStyle"
+                   TargetType="{x:Type Label}"
+                   BasedOn="{StaticResource PoppinsRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="HorizontalOptions"
+                        Value="End" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LittleSize}" />
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android"
+                                Value="0, -3, 5, 0" />
                         </OnPlatform>
                     </Setter.Value>
                 </Setter>
@@ -125,7 +144,12 @@
 
             <Label Grid.Row="5"
                    Text="Forgot passord?"
-                   HorizontalOptions="End" />
+                   Style="{StaticResource ForgotPwdLabelStyle}"
+                   HorizontalOptions="End">
+                <Label.Effects>
+                    <effects:UnderlineTextEffect />
+                </Label.Effects>
+            </Label>
 
         </Grid>
         <Button Grid.Row="1"

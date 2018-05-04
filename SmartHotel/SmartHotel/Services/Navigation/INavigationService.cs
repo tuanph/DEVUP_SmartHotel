@@ -12,5 +12,8 @@ namespace SmartHotel.Services.Navigation
         Task NavigateToAsync(Type viewModelType);
         Task NavigateToAsync(Type viewModelType, object parameter);
         Task NavigateBackAsync();
+        Task NavigateToPopupAsync<TViewModel>(bool animate) where TViewModel : ViewModelBase;
+
+        Task NavigateToPopupAsync<TViewModel>(object parameter, bool animate) where TViewModel : ViewModelBase;
     }
 }

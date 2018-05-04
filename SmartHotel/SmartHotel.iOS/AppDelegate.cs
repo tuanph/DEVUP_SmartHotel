@@ -23,6 +23,7 @@ namespace SmartHotel.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             CachedImageRenderer.Init();
+            //Rg.Plugins.Popup.Popup.Init();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

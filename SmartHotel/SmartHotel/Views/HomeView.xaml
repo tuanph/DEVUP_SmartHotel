@@ -140,7 +140,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Open Door">
+        <ToolbarItem Text="Open Door"
+                     Command="{Binding OpenDoorCommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="Android, iOS"

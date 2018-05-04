@@ -20,6 +20,7 @@ namespace SmartHotel.ViewModels
         public HomeViewModel()
         {
             NotificationsCommand = new DelegateCommand(OnNotificationsAsync);
+            OpenDoorCommand = new DelegateCommand(OpenDoor);
             Notifications = new ObservableCollection<Notification>
             {
                 new Models.Notification { Text = "Cleaning services have finished refreshing your room.", Type = NotificationType.BeGreen },
@@ -29,6 +30,12 @@ namespace SmartHotel.ViewModels
             };
         }
         public DelegateCommand NotificationsCommand { get; }
+        public DelegateCommand OpenDoorCommand { get; }
+
+        private async void OpenDoor()
+        {
+            await NavigationService.NavigateToPopupAsync<OpenDoorViewModel>(true);
+        }
 
         private void OnNotificationsAsync()
         {

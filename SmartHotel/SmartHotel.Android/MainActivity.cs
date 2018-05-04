@@ -16,8 +16,8 @@ using Android.Util;
 namespace SmartHotel.Droid
 {
     [Activity(Label = "SmartHotel",
-        Icon = "@drawable/icon", 
-        Theme = "@style/MainTheme", 
+        Icon = "@drawable/icon",
+        Theme = "@style/MainTheme",
         MainLauncher = false,
         ScreenOrientation = ScreenOrientation.Portrait)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -28,6 +28,7 @@ namespace SmartHotel.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+            //Rg.Plugins.Popup.Popup.Init(this, bundle);
             UserDialogs.Init(this);
             CachedImageRenderer.Init(false); // set false to fix issue height wrong
             Xamarin.FormsGoogleMaps.Init(this, bundle);
