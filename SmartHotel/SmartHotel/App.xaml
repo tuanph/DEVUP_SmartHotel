@@ -307,6 +307,7 @@
             <converters:EnabledToHeightConverter x:Key="EnabledToHeightConverter" /> 
             <converters:SuggestionTypeToColorConverter x:Key="SuggestionTypeToColorConverter" />
             <converters:HotelImageConverter x:Key="HotelImageConverter" />
+            <converters:FirstValidationErrorConverter x:Key="FirstValidationErrorConverter" />
             
         </ResourceDictionary>
     </Application.Resources>

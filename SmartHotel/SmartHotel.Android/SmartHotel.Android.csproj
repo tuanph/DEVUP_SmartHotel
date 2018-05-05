@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Effects\UnderlineTextEffect.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\BasicCalendarRenderer.cs" />
     <Compile Include="Renderers\CustomMapRenderer.cs" />
     <Compile Include="Renderers\CustomNavigationPageRenderer.cs" />
     <Compile Include="Renderers\ExtendedEntryRenderer.cs" />

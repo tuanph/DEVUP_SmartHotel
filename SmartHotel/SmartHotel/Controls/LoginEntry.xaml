@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHotel.Controls.LoginEntry"
+             x:Name="Self">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="HeaderTextStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource PoppinsRegularLabelStyle}">
+                <Setter Property="TextColor"
+                        Value="{StaticResource WhiteColor}" />
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand" />
+                <Setter Property="FontSize"
+                        Value="{StaticResource LittleSize}" />
+                <Setter Property="Margin">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android"
+                                Value="5, 0, 0, 0" />
+                            <On Platform="iOS"
+                                Value="0, 8, 0, 0" />
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout>
+            <Label  Text="{Binding Source = {x:Reference Self},Path=LabelText,Mode=TwoWay}"
+                    Style="{StaticResource HeaderTextStyle}" />
+            <Entry x:Name="txtUserName"
+                   TextColor="{StaticResource WhiteColor}"
+                   Text="{Binding Source = {x:Reference Self},Path=Text,Mode=TwoWay}"
+                   Placeholder="{Binding Source = {x:Reference Self},Path=Placeholder,Mode=TwoWay}" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

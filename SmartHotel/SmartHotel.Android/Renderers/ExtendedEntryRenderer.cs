@@ -13,7 +13,7 @@ namespace SmartHotel.Droid.Renderers
         public ExtendedEntryRenderer(Context context) : base(context)
         {
         }
-        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)// when control renderes
         {
             base.OnElementChanged(e);
 
@@ -24,7 +24,7 @@ namespace SmartHotel.Droid.Renderers
             }
         }
 
-        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e) // when at least property of control changed. (When validate....)
         {
             base.OnElementPropertyChanged(sender, e);
 

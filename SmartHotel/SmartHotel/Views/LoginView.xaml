@@ -56,13 +56,20 @@
         </Grid.RowDefinitions>
         <Image Source="img_header_background_1"
                Aspect="AspectFill" />
-
-        <Grid Padding="40,0,40,30">
+        <Grid>
+            <ActivityIndicator Color="{StaticResource AccentColor}"
+                               IsRunning="{Binding IsBusy}"
+                               IsVisible="{Binding IsBusy}" />
+        </Grid>
+        <Grid Grid.Row="0"
+              Padding="40,0,40,30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="18" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="18" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="24" />
             </Grid.RowDefinitions>
@@ -72,6 +79,7 @@
                    VerticalOptions="Center" />
             <Label Grid.Row="1"
                    Text="Username"
+                   TextColor="{Binding Path=LineColorToApply,Source={Reference UsernameEntry}}"
                    Style="{StaticResource HeaderTextStyle}">
                 <Label.HorizontalOptions>
                     <OnIdiom x:TypeArguments="LayoutOptions"
@@ -91,8 +99,8 @@
                                  Grid.Row="2"
                                  Placeholder="Username"
                                  AutomationId="username"
-                                 Text="{Binding UserName,Mode=TwoWay }"
-                                 IsValid="False">
+                                 Text="{Binding UserName.Value,Mode=TwoWay }"
+                                 IsValid="{Binding UserName.IsValid,Mode=TwoWay}">
                 <ctrls:ExtendedEntry.HorizontalOptions>
                     <OnIdiom x:TypeArguments="LayoutOptions"
                              Desktop="Center"
@@ -107,7 +115,13 @@
             </ctrls:ExtendedEntry>
 
             <Label Grid.Row="3"
+                   IsVisible="{Binding UserName.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                   Text="{Binding UserName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                   TextColor="{StaticResource ValidationErrorColor}" />
+
+            <Label Grid.Row="4"
                    Text="Password"
+                   TextColor="{Binding Path=LineColorToApply,Source= {Reference PasswordEntry}}"
                    Style="{StaticResource HeaderTextStyle}">
                 <Label.HorizontalOptions>
                     <OnIdiom x:TypeArguments="LayoutOptions"
@@ -122,13 +136,13 @@
                 </Label.WidthRequest>
             </Label>
 
-            <ctrls:ExtendedEntry Grid.Row="4"
+            <ctrls:ExtendedEntry Grid.Row="5"
                                  x:Name="PasswordEntry"
                                  IsPassword="True"
                                  Placeholder="Password"
                                  AutomationId="password"
-                                 Text="{Binding Password,Mode=TwoWay}"
-                                 IsValid="True">
+                                 Text="{Binding Password.Value,Mode=TwoWay}"
+                                 IsValid="{Binding Password.IsValid,Mode=TwoWay}">
                 <ctrls:ExtendedEntry.HorizontalOptions>
                     <OnIdiom x:TypeArguments="LayoutOptions"
                              Desktop="Center"
@@ -142,7 +156,12 @@
                 </ctrls:ExtendedEntry.WidthRequest>
             </ctrls:ExtendedEntry>
 
-            <Label Grid.Row="5"
+            <Label Grid.Row="6"
+                   IsVisible="{Binding Password.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                   Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                   TextColor="{StaticResource ValidationErrorColor}" />
+
+            <Label Grid.Row="7"
                    Text="Forgot passord?"
                    Style="{StaticResource ForgotPwdLabelStyle}"
                    HorizontalOptions="End">
@@ -152,18 +171,14 @@
             </Label>
 
         </Grid>
+
         <Button Grid.Row="1"
                 Text="Log in"
                 HeightRequest="60"
                 Margin="30,-30,30,0"
                 VerticalOptions="Start"
                 Command="{Binding LoginCommand}" />
-        <Grid Grid.Row="1">
-            <ActivityIndicator Color="{StaticResource AccentColor}"
-                               IsRunning="{Binding IsBusy}"
-                               IsVisible="{Binding IsBusy}" />
-        </Grid>
-
+        <!--<ctrls:BasicCalendar Grid.Row="1" />-->
     </Grid>
 
 </ContentPage>
