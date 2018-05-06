@@ -172,12 +172,24 @@
 
         </Grid>
 
-        <Button Grid.Row="1"
-                Text="Log in"
-                HeightRequest="60"
-                Margin="30,-30,30,0"
-                VerticalOptions="Start"
-                Command="{Binding LoginCommand}" />
+        <StackLayout Grid.Row="1"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     x:Name="LoginButtons"
+                     Margin="38, -40, 38, 0">
+            <ctrls:ButtonFrame>
+                <Button Text="Log in"
+                        HeightRequest="80"
+                        Command="{Binding LoginCommand}"
+                        BackgroundColor="{StaticResource WhiteColor}"
+                        TextColor="{StaticResource OrangeColor}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand" />
+            </ctrls:ButtonFrame>
+        </StackLayout>
+
+
+
         <!--<ctrls:BasicCalendar Grid.Row="1" />-->
     </Grid>
 
