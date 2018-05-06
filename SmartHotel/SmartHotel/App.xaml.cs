@@ -10,7 +10,7 @@ namespace SmartHotel
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new SmartHotel.Views.LoginView());
+            //MainPage = new NavigationPage(new SmartHotel.Views.LoginView());
             BuildDependencies();
 
         }

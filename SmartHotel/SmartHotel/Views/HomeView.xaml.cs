@@ -1,6 +1,6 @@
-﻿using System;
+﻿using SmartHotel.Helpers;
+using System;
 using System.Diagnostics;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,6 +20,12 @@ namespace SmartHotel.Views
                 Debug.WriteLine("CustomError_HomeView: " + ex.ToString());
             }
 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            StatusBarHelper.Instance.MakeTranslucentStatusBar(true);
         }
     }
 }

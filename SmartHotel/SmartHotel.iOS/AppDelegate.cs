@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CarouselView.FormsPlugin.iOS;
 using FFImageLoading.Forms.Touch;
 using Foundation;
+using Microcharts.Forms;
 using UIKit;
 
 namespace SmartHotel.iOS
@@ -23,11 +25,33 @@ namespace SmartHotel.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             CachedImageRenderer.Init();
-            //Rg.Plugins.Popup.Popup.Init();
+            CarouselViewRenderer.Init();
+            Xamarin.FormsGoogleMaps.Init("api_key_here");
+            InitChartView();
+            InitXamanimation();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 
-            return base.FinishedLaunching(app, options);
+            base.FinishedLaunching(app, options);
+
+            //Custom app
+            UINavigationBar.Appearance.SetBackgroundImage(new UIImage(), UIBarMetrics.Default);
+            UINavigationBar.Appearance.ShadowImage = new UIImage();
+            UINavigationBar.Appearance.BackgroundColor = UIColor.Clear;
+            UINavigationBar.Appearance.TintColor = UIColor.White;
+            UINavigationBar.Appearance.BarTintColor = UIColor.Clear;
+            UINavigationBar.Appearance.Translucent = true;
+            return true;
+        }
+
+        private static void InitChartView()
+        {
+            var t1 = typeof(ChartView);
+        }
+
+        private static void InitXamanimation()
+        {
+            var t2 = typeof(Xamanimation.AnimationBase);
         }
     }
 }

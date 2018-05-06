@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using SmartHotel.Helpers;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace SmartHotel.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MyRoomView : ContentPage
 	{
 		public MyRoomView ()
@@ -28,7 +24,7 @@ namespace SmartHotel.Views
         {
             base.OnAppearing();
             this.SizeChanged += OnSizeChanged;
-            //StatusBarHelper.Instance.MakeTranslucentStatusBar(false);
+            StatusBarHelper.Instance.MakeTranslucentStatusBar(false);
         }
         protected override void OnDisappearing()
         {
