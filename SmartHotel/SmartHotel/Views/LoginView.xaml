@@ -175,9 +175,10 @@
         <StackLayout Grid.Row="1"
                      HorizontalOptions="FillAndExpand"
                      VerticalOptions="FillAndExpand"
-                     x:Name="LoginButtons"
-                     Margin="38, -40, 38, 0">
-            <ctrls:ButtonFrame>
+                     BackgroundColor="{StaticResource WhiteColor}"
+                     x:Name="LoginButtons">
+            <ctrls:ButtonFrame Margin="38, -40, 38, 0"
+                               HeightRequest="80">
                 <Button Text="Log in"
                         HeightRequest="80"
                         Command="{Binding LoginCommand}"
