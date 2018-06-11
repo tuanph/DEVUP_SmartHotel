@@ -47,7 +47,7 @@ namespace SmartHotel.ViewModels
         private void AddValidations()
         {
             _userName.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Username should not be empty" });
-            _userName.Validations.Add(new EmailRule<string> { ValidationMessage = "Username should be an email address" });
+            //_userName.Validations.Add(new EmailRule<string> { ValidationMessage = "Username should be an email address" });
             _password.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password should not be empty" });
         }
 
@@ -59,14 +59,15 @@ namespace SmartHotel.ViewModels
             if (!isValid)
                 return;
             IsBusy = true;
-            if (await _IAuthenticationService.LoginAsync(UserName.Value, Password.Value))
-            {
-                await NavigationService.NavigateToAsync<MainViewModel>();
-            }
-            else
-            {
-                await DialogService.ShowAlertAsync("Username or password invald.", "Information", "Ok");
-            }
+            await NavigationService.NavigateToAsync<MainViewModel>();
+            //if (await _IAuthenticationService.LoginAsync(UserName.Value, Password.Value))
+            //{
+            //    await NavigationService.NavigateToAsync<MainViewModel>();
+            //}
+            //else
+            //{
+            //    await DialogService.ShowAlertAsync("Username or password invald.", "Information", "Ok");
+            //}
             IsBusy = false;
             //NavigationService.NavigateToAsync<HomeViewModel>();
         }

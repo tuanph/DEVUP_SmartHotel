@@ -1,5 +1,6 @@
 ﻿
 using Plugin.Media;
+using Plugin.MediaManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,8 @@ namespace SmartHotel.Views
                 var stream = file.GetStream();
                 return stream;
             });
+
+            await CrossMediaManager.Current.Play("http://www.montemagno.com/sample.mp3");
         }
 
     }

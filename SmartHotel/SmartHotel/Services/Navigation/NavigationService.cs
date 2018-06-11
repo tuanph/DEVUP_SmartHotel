@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AppCenter.Crashes;
 using Rg.Plugins.Popup.Pages;
 using Rg.Plugins.Popup.Services;
 using SmartHotel.ViewModels;
@@ -104,8 +105,7 @@ namespace SmartHotel.Services.Navigation
             }
             catch (Exception ex)
             {
-
-                throw;
+                Crashes.TrackError(ex);
             }
 
 

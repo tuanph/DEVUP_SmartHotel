@@ -2280,7 +2280,6 @@ namespace SmartHotel.Droid
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator = global::SmartHotel.Droid.Resource.Styleable.ViewPagerIndicator;
 			global::Com.ViewPagerIndicator.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle = global::SmartHotel.Droid.Resource.Styleable.ViewPagerIndicator_vpiCirclePageIndicatorStyle;
 			global::Microcharts.Droid.Resource.String.library_name = global::SmartHotel.Droid.Resource.String.library_name;
-			global::Splat.Resource.String.library_name = global::SmartHotel.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::SmartHotel.Droid.Resource.Attribute.actionBarSize;
 		}
 		
